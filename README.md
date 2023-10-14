@@ -8,4 +8,4 @@ mulai dari: POST, GET, PUT, & DELETE.
 
 
 PUT USERS    : http://localhost:8080/api/users/update/10
-PUT PRODUCTS : http://localhost:8080/api/products/10
+PUT PRODUCTS : http://localhost:8080/api/products/update/10
