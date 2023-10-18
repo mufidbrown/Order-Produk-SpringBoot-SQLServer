@@ -40,7 +40,7 @@ public class PegawaiController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPegawai);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Pegawai> updatePegawai(@PathVariable Long id, @RequestBody Pegawai pegawai) {
         Pegawai updatedPegawai = pegawaiService.updatePegawai(id, pegawai);
         if (updatedPegawai != null) {

@@ -27,10 +27,6 @@ public class PegawaiService {
     }
 
 
-//    public boolean deletePegawai(Long id) {
-//        pegawaiRepository.deleteById(id);
-//        return false;
-//    }
 
     public void deletePegawai(Long id) {
         pegawaiRepository.deleteById(id);
