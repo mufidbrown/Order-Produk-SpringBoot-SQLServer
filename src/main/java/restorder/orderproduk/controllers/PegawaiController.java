@@ -10,7 +10,7 @@ import restorder.orderproduk.service.PegawaiService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/pegawai")
+@RequestMapping("/api/pegawais")
 public class PegawaiController {
 
 
@@ -23,38 +23,36 @@ public class PegawaiController {
         return new ResponseEntity<>(pegawais, HttpStatus.OK);
     }
 
-
     @GetMapping("/{id}")
-    public ResponseEntity<Pegawai> getProductById(@PathVariable Long id) {
+    public ResponseEntity<Pegawai> getPegawaiById(@PathVariable Long id) {
         Pegawai pegawai = pegawaiService.getPegawaiById(id);
         if (pegawai != null) {
-            return ResponseEntity.ok(pegawai);
+            return new ResponseEntity<>(pegawai, HttpStatus.OK);
         } else {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @PostMapping
-    public ResponseEntity<Pegawai> createProduct(@RequestBody Pegawai pegawai) {
+    public ResponseEntity<Pegawai> createPegawai(@RequestBody Pegawai pegawai) {
         Pegawai createdPegawai = pegawaiService.createPegawai(pegawai);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdPegawai);
+        return new ResponseEntity<>(createdPegawai, HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Pegawai> updatePegawai(@PathVariable Long id, @RequestBody Pegawai pegawai) {
         Pegawai updatedPegawai = pegawaiService.updatePegawai(id, pegawai);
         if (updatedPegawai != null) {
-            return ResponseEntity.ok(updatedPegawai);
+            return new ResponseEntity<>(updatedPegawai, HttpStatus.OK);
         } else {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deletePegawai(@PathVariable Long id) {
         pegawaiService.deletePegawai(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
 }
+
