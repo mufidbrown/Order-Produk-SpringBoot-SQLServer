@@ -2,6 +2,7 @@ package restorder.orderproduk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import restorder.orderproduk.BaseResponse;
 import restorder.orderproduk.entity.Pegawai;
 import restorder.orderproduk.repositories.PegawaiRepository;
 
@@ -36,6 +37,14 @@ public class PegawaiService {
         pegawaiRepository.save(pegawai);
         return pegawai;
    }
+
+
+
+
+
+
+//   BaseResponse<?> test();
+//   BaseResponse<?> testPegawai();
 
 
 }
