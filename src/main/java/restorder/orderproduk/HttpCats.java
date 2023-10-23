@@ -1,7 +1,6 @@
 package restorder.orderproduk;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
@@ -17,10 +16,15 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class HttpClient {
-    private final String baseUrl = "https://api.github.com/users/mojombo";
+public class HttpCats {
 
-    @Bean("GIHUT_HTTP_CLIENT")
+
+//    private final String baseUrl = "https://cataas.com/api/cats?tags=cute";
+    private final String baseUrl = "https://cataas.com/";
+
+
+
+    @Bean("CATS_HTTP_CLIENT")
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);
