@@ -11,15 +11,11 @@ import java.util.ArrayList;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NationResponse {
+public class UserResponse {
 
-    private Integer count;
+    private DataResponse data;
 
-    private String name;
+    private SupportResponse support;
 
-//    private Object country;
 
-    private ArrayList<CountryResponse> country;
-
- // consume Api Query Params /@RequestParams
 }

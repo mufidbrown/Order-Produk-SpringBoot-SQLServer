@@ -21,7 +21,9 @@ public class RegisterController {
 
     @PostMapping("/post")
     public BaseResponse<?> register(@RequestBody RegisterRequest registerRequest){
-        return registerService.register(registerRequest);
+//        public BaseResponse<?> register(@RequestMapping RegisterRequest registerRequest){
+//            public BaseResponse<?> register(@RequestParam RegisterRequest registerRequest){
+                return registerService.register(registerRequest);
     }
 
 

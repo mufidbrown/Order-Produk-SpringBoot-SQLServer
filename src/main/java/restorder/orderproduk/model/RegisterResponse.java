@@ -14,4 +14,8 @@ public class RegisterResponse {
     private Integer id;
 
     private String token;
+
+    //consume Api post nampilin response, class ini terkait dengan RegisterRequest
+    // consume Api Query Body /@RequestBody
+
 }

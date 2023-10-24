@@ -56,19 +56,5 @@ public class GithubResponse {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // consume api Get
 }
