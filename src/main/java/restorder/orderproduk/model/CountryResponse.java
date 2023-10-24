@@ -5,19 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NationResponse {
+public class CountryResponse {
 
-    private Integer count;
+    private String country_id;
 
-    private String name;
-
-//    private Object country;
-
-    private ArrayList<CountryResponse> country;
+//    private Long probability;
 }

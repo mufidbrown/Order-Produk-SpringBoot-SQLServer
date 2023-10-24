@@ -5,19 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NationResponse {
+public class RegisterRequest {
 
-    private Integer count;
+    private String email;
 
-    private String name;
+    private String password;
 
-//    private Object country;
 
-    private ArrayList<CountryResponse> country;
 }

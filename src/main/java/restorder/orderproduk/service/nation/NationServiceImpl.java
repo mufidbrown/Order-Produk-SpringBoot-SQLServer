@@ -1,6 +1,7 @@
 package restorder.orderproduk.service.nation;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.ApiRetrofit;
 import restorder.orderproduk.BaseResponse;
@@ -22,9 +23,9 @@ public class NationServiceImpl implements NationService{
     }
 
     @Override
-    public BaseResponse<?> nation() {
+    public BaseResponse<?> nation(String name) {
         AtomicReference<NationResponse> respon = new AtomicReference<>();
-        apiRetrofit.nation()
+        apiRetrofit.nation(name)
                 .doOnError(Throwable::printStackTrace)
                 .doOnSuccess(respon::set)
                 .subscribe();

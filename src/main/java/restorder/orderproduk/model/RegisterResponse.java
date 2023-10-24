@@ -5,19 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NationResponse {
+public class RegisterResponse {
 
-    private Integer count;
+    private Integer id;
 
-    private String name;
-
-//    private Object country;
-
-    private ArrayList<CountryResponse> country;
+    private String token;
 }

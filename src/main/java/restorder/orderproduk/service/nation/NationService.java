@@ -5,7 +5,7 @@ import restorder.orderproduk.BaseResponse;
 public interface NationService {
 
 
-    BaseResponse<?>nation();
+    BaseResponse<?>nation(String name);
 
 
 
