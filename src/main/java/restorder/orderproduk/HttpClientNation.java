@@ -16,15 +16,14 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class HttpCats {
+public class HttpClientNation {
 
 
-//    private final String baseUrl = "https://cataas.com/api/cats?tags=cute";
-    private final String baseUrl = "https://cataas.com/api/";
+//    private final String baseUrl = "https://api.nationalize.io?name=nathaniel";
+    private final String baseUrl = "https://api.nationalize.io";
 
 
-
-    @Bean("CATS_HTTP_CLIENT")
+    @Bean("NATION_HTTP_CLIENT")
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);
