@@ -34,6 +34,11 @@ public interface ApiRetrofit {
             @Path("id") Integer id
     );
 
+    @POST("/api/users")
+    Single<CreateUserResponse> createuser(
+            @Body CreateUserRequest createUserRequest
+    );
+
 
 
 

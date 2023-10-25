@@ -9,6 +9,7 @@ public interface ServicePegawai {
     BaseResponse<?> testParameter(Integer idPegawai);
 
 
+
 //    BaseResponse<?> testProperty();
 
 
