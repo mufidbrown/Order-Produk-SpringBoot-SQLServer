@@ -1,6 +1,7 @@
 package restorder.orderproduk;
 
 import io.reactivex.Single;
+import org.springframework.web.bind.annotation.RequestBody;
 import restorder.orderproduk.model.*;
 import retrofit2.http.*;
 
@@ -39,23 +40,11 @@ public interface ApiRetrofit {
             @Path("id") Integer id
     );
 
-//    @PUT("/api/users/2")
-//    Single<UpdateUserResponse> udpateuser(
-//            @Path("id") UpdateUserRequest updateUserRequest
-//    );
-
-//    @PUT("/api/users/2")
-//    Single<UpdateUserResponse> udpateuser(
-//            @Body UpdateUserRequest updateUserRequest
-//    );
 
     @PUT("/api/users/{id}")
     Single<UpdateUserResponse> updateuser(
-            @Path("id") Integer id
+            @Path("id") Integer id, @Body UpdateUserRequest updateUserRequest
     );
-
-
-
 
 
 

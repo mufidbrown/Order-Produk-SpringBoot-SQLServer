@@ -5,13 +5,7 @@ import restorder.orderproduk.model.UpdateUserRequest;
 
 public interface UpdateUserService {
 
-//    BaseResponse<?> updateuser(Integer id, UpdateUserRequest payload);
 
+        BaseResponse<?> updateuser(Integer id, UpdateUserRequest updateUserRequest);
 
-//        BaseResponse<?>updateuser(Integer id);
-
-
-//        BaseResponse<?> updateuser(Integer id, UpdateUserRequest updateUserRequest);
-
-        BaseResponse<?> updateuser(Integer id);
 }

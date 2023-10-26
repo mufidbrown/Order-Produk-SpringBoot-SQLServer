@@ -17,24 +17,12 @@ public class UpdateUserController {
     @Autowired
     private UpdateUserService updateUserService;
 
-//    @PutMapping("/{id}")
-//    public BaseResponse<?> updateuser(@PathVariable Integer id, @RequestBody UpdateUserRequest payload){
-////
-////        System.out.println(payload.getName());
-////        return null;
-//
-//        return updateUserService.updateuser(id, payload);
-//    }
-
 
     @PutMapping("/{id}")
-    public BaseResponse<?> updateuser(@PathVariable Integer id){
-//        System.out.println(payload.getName());
-//        return null;
-//        return updateUserService.updateuser(id, payload);
-        return updateUserService.updateuser(id);
-//        @PathVariable Integer id, @RequestBody UpdateUserRequest payload
-//        UpdateUserRequest updateUserRequest
+    public BaseResponse<?> updateuser(@PathVariable Integer id, @RequestBody UpdateUserRequest updateUserRequest){
+        return updateUserService.updateuser(id, updateUserRequest);
+//        return registerService.register(registerRequest);
+
     }
 
 }

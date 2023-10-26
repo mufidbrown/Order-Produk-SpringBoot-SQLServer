@@ -19,33 +19,10 @@ public class UpdateUserServiceImpl implements UpdateUserService{
         this.apiRetrofit = retrofit.create(ApiRetrofit.class);
     }
 
-//    @Override
-//    public BaseResponse<?> updateuser(Integer id, UpdateUserRequest payload) {
-//
-////        AtomicReference<UpdateUserResponse> respon = new AtomicReference<>();
-////        apiRetrofit.udpateuser(updateUserRequest)
-////                .doOnError((Throwable::printStackTrace))
-////                .doOnSuccess(respon::set)
-////                .subscribe();
-////        apiRetrofit.udpateuser()
-//
-//        return BaseResponse.ok(payload);
-//    }
-
-//    @Override
-//    public BaseResponse<?> updateuser(Integer id, UpdateUserRequest updateUserRequest) {
-//        AtomicReference<UpdateUserResponse> respon = new AtomicReference<>();
-//        apiRetrofit.updateuser(id)
-//                .doOnError(Throwable::printStackTrace)
-//                .doOnSuccess(respon::set)
-//                .subscribe();
-//        return BaseResponse.ok(respon.get());
-//    }
-
     @Override
-    public BaseResponse<?> updateuser(Integer id) {
+    public BaseResponse<?> updateuser(Integer id, UpdateUserRequest updateUserRequest) {
         AtomicReference<UpdateUserResponse> respon = new AtomicReference<>();
-        apiRetrofit.updateuser(id)
+        apiRetrofit.updateuser(id, updateUserRequest)
                 .doOnError(Throwable::printStackTrace)
                 .doOnSuccess(respon::set)
                 .subscribe();
