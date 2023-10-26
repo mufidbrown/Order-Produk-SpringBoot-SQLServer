@@ -1,7 +1,6 @@
 package restorder.orderproduk;
 
 import io.reactivex.Single;
-import jakarta.persistence.Id;
 import restorder.orderproduk.model.*;
 import retrofit2.http.*;
 
@@ -29,15 +28,33 @@ public interface ApiRetrofit {
     );
 
 
+    @POST("/api/users")
+    Single<CreateUserResponse> createuser(
+            @Body CreateUserRequest createUserRequest
+    );
+
+
     @GET("/api/users/{id}")
     Single<UserResponse> user(
             @Path("id") Integer id
     );
 
-    @POST("/api/users")
-    Single<CreateUserResponse> createuser(
-            @Body CreateUserRequest createUserRequest
+//    @PUT("/api/users/2")
+//    Single<UpdateUserResponse> udpateuser(
+//            @Path("id") UpdateUserRequest updateUserRequest
+//    );
+
+//    @PUT("/api/users/2")
+//    Single<UpdateUserResponse> udpateuser(
+//            @Body UpdateUserRequest updateUserRequest
+//    );
+
+    @PUT("/api/users/{id}")
+    Single<UpdateUserResponse> updateuser(
+            @Path("id") Integer id
     );
+
+
 
 
 

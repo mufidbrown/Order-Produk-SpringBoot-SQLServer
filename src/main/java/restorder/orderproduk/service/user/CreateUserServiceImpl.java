@@ -6,8 +6,6 @@ import restorder.orderproduk.ApiRetrofit;
 import restorder.orderproduk.BaseResponse;
 import restorder.orderproduk.model.CreateUserRequest;
 import restorder.orderproduk.model.CreateUserResponse;
-import restorder.orderproduk.model.RegisterRequest;
-import restorder.orderproduk.model.RegisterResponse;
 import retrofit2.Retrofit;
 
 import java.util.concurrent.atomic.AtomicReference;
