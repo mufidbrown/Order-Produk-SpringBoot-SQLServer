@@ -1,21 +1,27 @@
 package restorder.orderproduk.controllers;
 
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import restorder.orderproduk.dto.StudentRequest;
+import restorder.orderproduk.entity.Student;
+import restorder.orderproduk.service.StudentService;
 
 @RestController
 @RequestMapping("/api")
 public class StudentController {
 
+    @Autowired
+    private StudentService studentService;
 
-
-//    @Autowired
-//    private StudentService studentService;
-//
-//    @PostMapping("/create/students")
-//    public ResponseEntity<Student> createStudent(@RequestBody @Valid StudentRequest studentRequest){
-//        return studentService.saveStudent(studentRequest);
-//    }
+    @PostMapping("/create/students")
+    public ResponseEntity<Student> createStudent(@RequestBody @Valid StudentRequest studentRequest){
+        return studentService.saveStudent(studentRequest);
+    }
 //
 //    @GetMapping("/get/students/all")
 //    public ResponseEntity<List<Student>> getAllStudents(){
