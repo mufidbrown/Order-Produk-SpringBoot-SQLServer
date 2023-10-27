@@ -8,6 +8,8 @@ import restorder.orderproduk.dto.StudentRequest;
 import restorder.orderproduk.entity.Student;
 import restorder.orderproduk.repositories.StudentRepository;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -15,7 +17,6 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     public ResponseEntity<Student> saveStudent(StudentRequest studentRequest) {
-
         try {
             Student student1 = Student.build(0, studentRequest.getName(), studentRequest.getAge(),
                     studentRequest.getAddress(), studentRequest.getEmail());
@@ -25,6 +26,13 @@ public class StudentService {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    public ResponseEntity<List<Student>> getAllstudents() {
+        List<Student> students = studentRepository.findAll();
+        return new ResponseEntity<>(students, HttpStatus.OK);
+    }
+
+
 
 
 }
