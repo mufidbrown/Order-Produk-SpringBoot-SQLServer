@@ -1,4 +1,4 @@
-package restorder.orderproduk;
+package restorder.orderproduk.api.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -16,14 +16,12 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class HttpCreateUser {
+public class HttpClientGithub {
+//    private final String baseUrl = "https://api.github.com/users/mojombo";
+    private final String baseUrl = "https://api.github.com/";
 
 
-    //    private final String baseUrl = "https://reqres.in/api/users";
-
-    private final String baseUrl = "https://reqres.in/";
-
-    @Bean("CREATEUSER_HTTP_CLIENT")
+    @Bean("GIHUB_HTTP_CLIENT")
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);
@@ -45,7 +43,4 @@ public class HttpCreateUser {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
-
-
-
 }

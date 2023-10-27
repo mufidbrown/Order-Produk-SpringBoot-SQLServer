@@ -2,9 +2,8 @@ package restorder.orderproduk.service.register;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import restorder.orderproduk.ApiRetrofit;
-import restorder.orderproduk.BaseResponse;
-import restorder.orderproduk.model.GithubResponse;
+import restorder.orderproduk.api.ApiRetrofit;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.RegisterRequest;
 import restorder.orderproduk.model.RegisterResponse;
 import retrofit2.Retrofit;

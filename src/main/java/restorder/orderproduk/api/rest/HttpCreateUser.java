@@ -1,4 +1,4 @@
-package restorder.orderproduk;
+package restorder.orderproduk.api.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -16,14 +16,14 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class HttpClientNation {
+public class HttpCreateUser {
 
 
-//    private final String baseUrl = "https://api.nationalize.io?name=nathaniel";
-    private final String baseUrl = "https://api.nationalize.io";
+    //    private final String baseUrl = "https://reqres.in/api/users";
 
+    private final String baseUrl = "https://reqres.in/";
 
-    @Bean("NATION_HTTP_CLIENT")
+    @Bean("CREATEUSER_HTTP_CLIENT")
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);
@@ -45,4 +45,7 @@ public class HttpClientNation {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
+
+
+
 }

@@ -2,9 +2,7 @@ package restorder.orderproduk.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import restorder.orderproduk.BaseResponse;
-import restorder.orderproduk.model.RegisterRequest;
-import restorder.orderproduk.service.register.RegisterService;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.service.user.UserService;
 
 @RestController

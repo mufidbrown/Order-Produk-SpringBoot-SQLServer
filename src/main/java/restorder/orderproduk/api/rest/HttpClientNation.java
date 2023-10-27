@@ -1,4 +1,4 @@
-package restorder.orderproduk;
+package restorder.orderproduk.api.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -16,12 +16,14 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class HttpClientGithub {
-//    private final String baseUrl = "https://api.github.com/users/mojombo";
-    private final String baseUrl = "https://api.github.com/";
+public class HttpClientNation {
 
 
-    @Bean("GIHUB_HTTP_CLIENT")
+//    private final String baseUrl = "https://api.nationalize.io?name=nathaniel";
+    private final String baseUrl = "https://api.nationalize.io";
+
+
+    @Bean("NATION_HTTP_CLIENT")
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);

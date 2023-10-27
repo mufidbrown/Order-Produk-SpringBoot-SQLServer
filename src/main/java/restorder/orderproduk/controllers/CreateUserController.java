@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import restorder.orderproduk.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.CreateUserRequest;
-import restorder.orderproduk.model.RegisterRequest;
-import restorder.orderproduk.service.register.RegisterService;
 import restorder.orderproduk.service.user.CreateUserService;
 
 @RestController

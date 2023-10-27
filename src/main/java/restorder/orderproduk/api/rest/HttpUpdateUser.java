@@ -1,4 +1,4 @@
-package restorder.orderproduk;
+package restorder.orderproduk.api.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -16,15 +16,15 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class HttpCats {
-
-
-//    private final String baseUrl = "https://cataas.com/api/cats?tags=cute";
-    private final String baseUrl = "https://cataas.com/api/";
+public class HttpUpdateUser {
 
 
 
-    @Bean("CATS_HTTP_CLIENT")
+    //    private final String baseUrl = "https://reqres.in/api/users/2";
+
+    private final String baseUrl = "https://reqres.in/";
+
+    @Bean("UPDATEUSER_HTTP_CLIENT")
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);
@@ -46,4 +46,6 @@ public class HttpCats {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
+
+
 }

@@ -4,8 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import restorder.orderproduk.BaseResponse;
-import restorder.orderproduk.entity.Pegawai;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.PegawaiResponse;
 
 import java.util.Arrays;

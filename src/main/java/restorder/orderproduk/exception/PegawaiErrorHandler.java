@@ -6,7 +6,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import restorder.orderproduk.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 
 @ControllerAdvice
 public class PegawaiErrorHandler {

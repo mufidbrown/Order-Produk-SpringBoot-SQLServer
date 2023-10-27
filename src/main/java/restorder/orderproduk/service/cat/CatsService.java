@@ -1,6 +1,6 @@
 package restorder.orderproduk.service.cat;
 
-import restorder.orderproduk.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 
 public interface CatsService {
 
