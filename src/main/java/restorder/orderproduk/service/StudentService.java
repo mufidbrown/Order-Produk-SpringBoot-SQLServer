@@ -9,6 +9,7 @@ import restorder.orderproduk.entity.Student;
 import restorder.orderproduk.exception.UserNotFoundException;
 import restorder.orderproduk.repositories.StudentRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,23 @@ public class StudentService {
             return ResponseEntity.ok(student.get());
         }
         throw new UserNotFoundException("User not found with Id : "+ studentId);
+    }
+
+    public ResponseEntity<List<Student>> getStudentByName(String studentName) {
+        try {
+            List<Student> students = new ArrayList<Student>();
+
+            if (studentName == null)
+                students.addAll(studentRepository.findAll());
+            else
+                students.addAll(studentRepository.findByName(studentName));
+            if (students.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(students, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 
