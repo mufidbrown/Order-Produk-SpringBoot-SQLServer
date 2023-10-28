@@ -6,9 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.dto.StudentRequest;
 import restorder.orderproduk.entity.Student;
+import restorder.orderproduk.exception.UserNotFoundException;
 import restorder.orderproduk.repositories.StudentRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -30,6 +32,14 @@ public class StudentService {
     public ResponseEntity<List<Student>> getAllstudents() {
         List<Student> students = studentRepository.findAll();
         return new ResponseEntity<>(students, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Student> getStudentById(int studentId) throws UserNotFoundException {
+        Optional<Student> student = studentRepository.findById(studentId);
+        if(student.isPresent()){
+            return ResponseEntity.ok(student.get());
+        }
+        throw new UserNotFoundException("User not found with Id : "+ studentId);
     }
 
 

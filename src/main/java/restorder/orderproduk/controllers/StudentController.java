@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.dto.StudentRequest;
 import restorder.orderproduk.entity.Student;
+import restorder.orderproduk.exception.UserNotFoundException;
 import restorder.orderproduk.service.StudentService;
 
 import java.util.List;
@@ -26,11 +27,12 @@ public class StudentController {
     public ResponseEntity<List<Student>> getAllStudents(){
         return studentService.getAllstudents();
     }
-//
-//    @GetMapping("/get/students/all")
-//    public ResponseEntity<List<Student>> getAllStudents(){
-//        return studentService.getAllStudents();
-//    }
+
+    @GetMapping("/get/student/{studentId}")
+    public ResponseEntity<Student> getStudentById(@PathVariable(value = "studentId") int studentId) throws UserNotFoundException {
+        return studentService.getStudentById(studentId);
+    }
+
 //
 //    @GetMapping("/get/student/{studentId}")
 //    public ResponseEntity<Student> getStudentById(@PathVariable(value = "studentId") int studentId){
