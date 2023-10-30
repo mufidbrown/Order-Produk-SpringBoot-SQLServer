@@ -37,7 +37,7 @@ public class PegawaiServiceImpl implements ServicePegawai {
 
     @Override
     public BaseResponse<?> testParameter(Integer idPegawai) {
-        Query query = entityManager.createNativeQuery("SELECT nik, nama, alamat, email, jabatan, telepon  from pegawais p WHERE id_pegawai = ?1");
+        Query query = entityManager.createNativeQuery("SELECT nik,  nama,  alamat, email, jabatan, telepon  from pegawais p WHERE id_pegawai = ?1");
         query.setParameter(1, idPegawai);
         List<?> list = Arrays.asList((Object[]) query.getSingleResult());
         PegawaiResponse pegawaiResponse = PegawaiResponse.builder()
@@ -51,6 +51,7 @@ public class PegawaiServiceImpl implements ServicePegawai {
         return BaseResponse.ok(pegawaiResponse);
 
     }
+
 
 
 //    @Override
