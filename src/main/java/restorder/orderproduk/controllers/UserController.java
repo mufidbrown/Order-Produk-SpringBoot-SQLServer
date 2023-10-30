@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import restorder.orderproduk.api.BaseResponse;
+import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.service.UserService;
 
@@ -54,5 +56,30 @@ public class UserController {
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
+
+
+    //-----------------------BaseResponse------------------------
+
+    @GetMapping("/user/v1")
+    public ResponseEntity<BaseResponse<List<User>>> getAllUsers2() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(BaseResponse.ok("Daftar Semua User", users));
+
+    }
+
+
+    @GetMapping("/user/v1/{id}")
+    public ResponseEntity<BaseResponse<User>> getUserById2(@PathVariable("id") Long id) {
+        User user = userService.getUserById(id);
+        if (user != null) {
+            return ResponseEntity.ok(BaseResponse.ok("User Ditemukan", user));
+        } else {
+            return ResponseEntity.ok(BaseResponse.error("User Tidak Ditemukan"));
+        }
+    }
+
+
 
 }
