@@ -62,6 +62,13 @@
 			<version>2.9.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava2 -->
 		<dependency>
