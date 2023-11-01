@@ -5,6 +5,7 @@ import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.api.BaseResponse;
+import restorder.orderproduk.model.PegawaiResponse;
 import restorder.orderproduk.model.ProductResponse;
 
 import java.util.Arrays;
@@ -26,6 +27,19 @@ public class ProductServiceImpl implements ServiceProduct {
                 .price(list.get(1).toString())
                 .build();
         return BaseResponse.ok(productResponse);
+    }
+
+    @Override
+    public BaseResponse<?> testParameterProduct(Integer idProduct) {
+        Query query = entityManager.createNativeQuery("select name, price from products p WHERE id = ?1");
+        query.setParameter(1, idProduct);
+        List<?> list = Arrays.asList((Object[]) query.getSingleResult());
+        ProductResponse productResponse = ProductResponse.builder()
+                .name(list.get(0).toString())
+                .price(list.get(1).toString())
+                .build();
+        return BaseResponse.ok(productResponse);
+
     }
 
 }
