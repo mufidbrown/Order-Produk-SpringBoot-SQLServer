@@ -3,6 +3,7 @@ package restorder.orderproduk.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.entity.Transaction;
+import restorder.orderproduk.model.TransactionRequest;
 import restorder.orderproduk.service.TransactionService;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class TransactionController {
     }
 
     @PostMapping
-    public Transaction createTransaction(@RequestParam Long userId, @RequestParam Long productId) {
-        return transactionService.createTransaction(userId, productId);
+    public Transaction createTransaction(@RequestBody TransactionRequest transactionRequest) {
+        return transactionService.createTransaction(transactionRequest);
     }
 
 }
