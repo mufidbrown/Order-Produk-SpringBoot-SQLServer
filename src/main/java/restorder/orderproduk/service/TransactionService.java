@@ -2,7 +2,6 @@ package restorder.orderproduk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.entity.User;
@@ -27,7 +26,7 @@ public class TransactionService {
         return transactionRepository.findAll();
     }
 
-    public Transaction getTransactionById(Long id) {
+    public Transaction findById(Long id) {
         return transactionRepository.findById(id).orElse(null);
     }
 
@@ -45,7 +44,6 @@ public class TransactionService {
         transaction.setProduct(product);
         return transactionRepository.save(transaction);
     }
-
 
 
 
