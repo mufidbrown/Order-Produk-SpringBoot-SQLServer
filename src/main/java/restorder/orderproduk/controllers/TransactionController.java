@@ -3,6 +3,7 @@ package restorder.orderproduk.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.entity.Transaction;
+import restorder.orderproduk.exception.ResourceNotFoundException;
 import restorder.orderproduk.model.TransactionRequest;
 import restorder.orderproduk.service.TransactionService;
 
@@ -18,6 +19,17 @@ public class TransactionController {
     @GetMapping
     public List<Transaction> getAllTransactions() {
         return transactionService.getAllTransactions();
+    }
+
+    @GetMapping("/{id}")
+    public List<Transaction> getAllTransactions(@PathVariable Long id) {
+        Transaction transaction = transactionService.getTransactionById(id);
+        if (transaction == null) {
+            throw new ResourceNotFoundException("Example not found with ID: " + id);
+        }
+        return transactionService.getAllTransactions();
+//        return ResponseEntity.ok(example);
+
     }
 
     @PostMapping

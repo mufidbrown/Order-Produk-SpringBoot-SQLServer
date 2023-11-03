@@ -27,6 +27,12 @@ public class TransactionService {
         return transactionRepository.findAll();
     }
 
+    public Transaction getTransactionById(Long id) {
+        return transactionRepository.findById(id).orElse(null);
+    }
+
+
+
 
 
     public Transaction createTransaction(TransactionRequest transactionRequest) {
@@ -40,5 +46,15 @@ public class TransactionService {
         return transactionRepository.save(transaction);
     }
 
+
+
+
+//        public List<Transaction> getTransactionsById() {
+//        return transactionRepository.gById(id);
+//    }
+
+//        public Transaction findById(Long id) {
+//
+//    }
 
 }
