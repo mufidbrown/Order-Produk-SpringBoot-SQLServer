@@ -1,9 +1,10 @@
-package restorder.orderproduk.service;
+package restorder.orderproduk.service.impl;
 
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
+import restorder.orderproduk.service.FilesStorageService;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -14,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 @Service
-public class FilesStorageServiceImpl implements FilesStorageService{
+public class FilesStorageServiceImpl implements FilesStorageService {
 
     private final Path root = Paths.get("uploads");
 

@@ -2,6 +2,7 @@ package restorder.orderproduk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import restorder.orderproduk.entity.Pegawai;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.entity.User;
@@ -25,6 +26,7 @@ public class TransactionService {
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
     }
+
 
     public Transaction findById(Long id) {
         return transactionRepository.findById(id).orElse(null);

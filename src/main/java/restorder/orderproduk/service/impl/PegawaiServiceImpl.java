@@ -1,4 +1,4 @@
-package restorder.orderproduk.service;
+package restorder.orderproduk.service.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.PegawaiResponse;
+import restorder.orderproduk.service.ServicePegawai;
 
 import java.util.Arrays;
 import java.util.List;
