@@ -67,19 +67,30 @@ public class TransactionController {
         return ResponseEntity.ok(BaseResponse.ok("Daftar Semua Transaksi", transactions));
     }
 
+//    @GetMapping("/pegawai/v1/{id}")
+//    public ResponseEntity<BaseResponse<Pegawai>> getPegawaiById2(@PathVariable("id") Long id) {
+//        Pegawai pegawai = pegawaiService.getPegawaiById(id);
+//        if (pegawai != null) {
+//            return ResponseEntity.ok(BaseResponse.ok("Pegawai Ditemukan", pegawai));
+//        } else {
+//            return ResponseEntity.ok(BaseResponse.error("Pegawai Tidak Ditemukan"));
+//        }
+//    }
+
+    @GetMapping("/transaction/v1/{id}")
+    public ResponseEntity<BaseResponse<Transaction>> getTransactionById2(@PathVariable("id") Long id) {
+        Transaction transaction = transactionService.findById(id);
+        if (transaction != null) {
+            return ResponseEntity.ok(BaseResponse.ok("Transaksi Ditemukan", transaction));
+        } else {
+            return ResponseEntity.ok(BaseResponse.error("Transaksi Tidak Ditemukan dengan id: " + id));
+        }
+    }
 
 
-//    @GetMapping
-//    public ResponseEntity<List<Pegawai>> getAllPegawais() {
-//        List<Pegawai> pegawais = pegawaiService.getAllPegawais();
-//        return new ResponseEntity<>(pegawais, HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/pegawai/v1")
-//    public ResponseEntity<BaseResponse<List<Pegawai>>> getAllPegawais2() {
-//        List<Pegawai> pegawais = pegawaiService.getAllPegawais();
-//        return ResponseEntity.ok(BaseResponse.ok("Daftar Semua Pegawai", pegawais));
-//
-//    }
+
+
+
+
 
 }
