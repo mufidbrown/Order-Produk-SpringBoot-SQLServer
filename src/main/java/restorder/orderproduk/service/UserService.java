@@ -38,7 +38,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public User createUser(User user) {
+    public static User createUser(User user) {
         userRepository.save(user);
         return user;
     }

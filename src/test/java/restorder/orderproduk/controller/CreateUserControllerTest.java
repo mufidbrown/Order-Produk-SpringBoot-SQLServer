@@ -11,9 +11,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import restorder.orderproduk.controllers.UserController;
 import restorder.orderproduk.entity.User;
+import restorder.orderproduk.repositories.UserRepository;
 import restorder.orderproduk.service.UserService;
+import restorder.orderproduk.util.JsonUtil;
 
-import static jdk.internal.logger.LoggerFinderLoader.service;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -29,6 +30,8 @@ public class CreateUserControllerTest {
 
     @MockBean
     private UserService userService;
+    @Autowired
+    private UserRepository userRepository;
 
     @Test
     public void createUser_whenPostMethod() throws Exception {
@@ -36,7 +39,7 @@ public class CreateUserControllerTest {
         User user = new User();
         user.setUsername("Test Name");
 
-        given(service.createNewUser(user)).willReturn(user);
+        given(userService.createUser(user)).willReturn(user);
 
         mockMvc.perform(post("/users")
                         .contentType(MediaType.APPLICATION_JSON)

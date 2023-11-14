@@ -16,6 +16,9 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class CreateUserServiceTest {
 
+
+
+
     @Mock
     private UserRepository userRepository;
 
@@ -29,7 +32,7 @@ public class CreateUserServiceTest {
 
         when(userRepository.save(ArgumentMatchers.any(User.class))).thenReturn(user);
 
-        User created = userService.createUser(user);
+        User created = UserService.createUser(user);
 
         assertThat(created.getUsername()).isSameAs(user.getUsername());
         verify(userRepository).save(user);
