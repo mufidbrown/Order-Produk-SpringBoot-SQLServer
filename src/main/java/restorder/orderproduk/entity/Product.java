@@ -1,9 +1,11 @@
 package restorder.orderproduk.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "products")
+@AllArgsConstructor
 public class Product {
 
     @Id
