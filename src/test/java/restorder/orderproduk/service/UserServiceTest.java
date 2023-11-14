@@ -44,10 +44,10 @@ public class UserServiceTest {
 //        when(userRepository.findAll()).thenReturn(List.of(user));
 //        List<User> users = this.userRepository.findAll();
 //        // Then
-//        assertEquals(10L, users.size());
+//        assertEquals(10L, user.size());
 //        verify(this.userRepository).findAll();
 //    }
-//
+
 //    @Test
 //    void findById_should_return_user() {
 //        // Given
@@ -57,7 +57,7 @@ public class UserServiceTest {
 //        Optional returnedUser = this.userRepository.findById(10L);
 //        // Then
 //        assertEquals(user.getId(), returnedUser.get()
-//                .getId());
+//                user.getId());
 //        verify(this.userRepository).findById(10L);
 //    }
 

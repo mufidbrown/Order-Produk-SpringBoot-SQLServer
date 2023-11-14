@@ -3,6 +3,7 @@ package restorder.orderproduk.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.entity.User;
+import restorder.orderproduk.exception.UserNotFoundException;
 import restorder.orderproduk.repositories.UserRepository;
 
 import java.util.List;
@@ -11,7 +12,10 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private static UserRepository userRepository;
+
+
+
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
@@ -21,12 +25,16 @@ public class UserService {
     }
     
 
-    public User updateUser(Long id, User user) {
+    public static User updateUser(Long id, User user) {
         userRepository.save(user);
         return user;
     }
 
     public void deleteUser(Long id) {
+
+//        userRepository.findById(id)
+//                .orElseThrow(() -> new UserNotFoundException(id));
+
         userRepository.deleteById(id);
     }
 

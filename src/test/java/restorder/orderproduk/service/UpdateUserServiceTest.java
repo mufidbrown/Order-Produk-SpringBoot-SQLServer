@@ -13,11 +13,9 @@ import java.util.Optional;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 
 @RunWith(MockitoJUnitRunner.class)
-public class DeleteUserServiceTest {
+public class UpdateUserServiceTest {
 
     @Mock
     private UserRepository userRepository;
@@ -26,25 +24,32 @@ public class DeleteUserServiceTest {
     private UserService userService;
 
     @Test
-    public void whenGivenId_shouldDeleteUser_ifFound(){
+    public void whenGivenId_shouldUpdateUser_ifFound() {
         User user = new User();
+        user.setId(9L);
         user.setUsername("a");
-        user.setId(1L);
 
-        when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
+        User newUser = new User();
+        user.setUsername("New Test Name");
 
-        userService.deleteUser(user.getId());
-        verify(userRepository).deleteById(user.getId());
+        given(userRepository.findById(user.getId())).willReturn(Optional.of(user));
+        UserService.updateUser(user.getId(), newUser);
+
+        verify(userRepository).save(newUser);
+        verify(userRepository).findById(user.getId());
     }
-
 
     @Test(expected = RuntimeException.class)
     public void should_throw_exception_when_user_doesnt_exist() {
         User user = new User();
-        user.setId(2L);
-        user.setUsername("a");
+        user.setId(9L);
+        user.setUsername("Test Name");
+
+        User newUser = new User();
+        user.setId(90L);
+        user.setUsername("New Test Name");
 
         given(userRepository.findById(anyLong())).willReturn(Optional.ofNullable(null));
-        userService.deleteUser(user.getId());
+        UserService.updateUser(user.getId(), newUser);
     }
 }
