@@ -39,9 +39,9 @@ public class CreateUserControllerTest {
         User user = new User();
         user.setUsername("Test Name");
 
-        given(userService.createUser(user)).willReturn(user);
+        given(UserService.createUser(user)).willReturn(user);
 
-        mockMvc.perform(post("/users")
+        mockMvc.perform(post("/add")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(JsonUtil.toJson(user)))
                 .andExpect(status().isCreated())
