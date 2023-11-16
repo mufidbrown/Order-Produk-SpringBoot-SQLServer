@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "products")
-@AllArgsConstructor
+//@AllArgsConstructor
 public class Product {
 
     @Id
@@ -16,7 +16,6 @@ public class Product {
     private Integer quantity;
     private double price;
     private String description;
-
 
     public Long getId() {
         return id;

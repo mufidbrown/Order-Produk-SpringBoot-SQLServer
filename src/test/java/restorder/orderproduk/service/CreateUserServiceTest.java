@@ -1,6 +1,7 @@
 package restorder.orderproduk.service;
 
 import org.junit.Test;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
@@ -32,6 +33,7 @@ public class CreateUserServiceTest {
 
         when(userRepository.save(ArgumentMatchers.any(User.class))).thenReturn(user);
 
+        @MethodSource
         User created = UserService.createUser(user);
 
         assertThat(created.getUsername()).isSameAs(user.getUsername());

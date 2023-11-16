@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.dto.StudentRequest;
-import restorder.orderproduk.entity.Student;
 import restorder.orderproduk.exception.UserNotFoundException;
 import restorder.orderproduk.service.StudentService;
 

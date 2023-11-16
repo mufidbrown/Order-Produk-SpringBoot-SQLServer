@@ -1,5 +1,6 @@
 package restorder.orderproduk.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.entity.User;
@@ -9,10 +10,11 @@ import restorder.orderproduk.repositories.UserRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
     @Autowired
-    private static UserRepository userRepository;
+    private UserRepository userRepository;
 
 
 
@@ -25,20 +27,16 @@ public class UserService {
     }
     
 
-    public static User updateUser(Long id, User user) {
+    public User updateUser(Long id, User user) {
         userRepository.save(user);
         return user;
     }
 
     public void deleteUser(Long id) {
-
-//        userRepository.findById(id)
-//                .orElseThrow(() -> new UserNotFoundException(id));
-
         userRepository.deleteById(id);
     }
 
-    public static User createUser(User user) {
+    public User createUser(User user) {
         userRepository.save(user);
         return user;
     }
