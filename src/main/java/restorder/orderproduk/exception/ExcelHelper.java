@@ -31,7 +31,7 @@ public class ExcelHelper {
         return true;
     }
 
-    public static ByteArrayInputStream tutorialsToExcel(List<Excel> excels) {
+    public static ByteArrayInputStream excelsToExcel(List<Excel> excels) {
 
         try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream();) {
             Sheet sheet = workbook.createSheet(SHEET);
@@ -123,4 +123,6 @@ public class ExcelHelper {
         }
     }
 
+//    public static ByteArrayInputStream excelsToExcel(List<Excel> excels) {
+//    }
 }
