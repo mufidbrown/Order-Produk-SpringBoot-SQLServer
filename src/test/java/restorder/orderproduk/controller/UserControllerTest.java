@@ -1,12 +1,15 @@
 package restorder.orderproduk.controller;
 
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.service.UserService;
 
@@ -38,8 +41,8 @@ public class UserControllerTest {
             mockMvc.perform(MockMvcRequestBuilders.get("/user"))
                     .andExpect(MockMvcResultMatchers.status().isOk())
                     .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[0].firstName", Matchers.is(user1.getFirstName())))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$[1].firstName", Matchers.is(user2.getFirstName())));
+                    .andExpect(MockMvcResultMatchers.jsonPath("$[0].username", Matchers.is(user1.getUsername())))
+                    .andExpect(MockMvcResultMatchers.jsonPath("$[1].username", Matchers.is(user2.getUsername())));
         }
 
         @Test
