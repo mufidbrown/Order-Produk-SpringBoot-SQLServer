@@ -1,10 +1,25 @@
 package restorder.orderproduk.controller;
 
 
+import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.controllers.ProductController;
+import restorder.orderproduk.entity.Product;
+import restorder.orderproduk.service.ProductService;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ProductController.class)
@@ -20,8 +35,8 @@ public class ProductControllerTest {
     @Test
     public void getAllProducts_ReturnsListOfProducts() throws Exception {
         // Buat objek tampilan dari produk
-        Product product1 = new Product(1L, "Product 1", "Description 1", 10000);
-        Product product2 = new Product(2L, "Product 2", "Description 2", 20000);
+        Product product1 = new Product(5L, "ram",  2, 300.000, "dimm");
+        Product product2 = new Product(6L, "processor", 1, 2000.000, "coreI7");
 
         // Buat objek tampilan dari semua produk
         List<Product> products = Arrays.asList(product1, product2);
