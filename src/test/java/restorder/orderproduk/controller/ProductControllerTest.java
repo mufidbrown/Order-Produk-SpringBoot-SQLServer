@@ -35,8 +35,8 @@ public class ProductControllerTest {
     @Test
     public void getAllProducts_ReturnsListOfProducts() throws Exception {
         // Buat objek tampilan dari produk
-        Product product1 = new Product(5L, "ram",  2, 300.000, "dimm");
-        Product product2 = new Product(6L, "processor", 1, 2000.000, "coreI7");
+        Product product1 = new Product(1L, "Product 1", 1, 10000,"Description 1");
+        Product product2 = new Product(2L, "Product 2", 2, 20000, "Description 2");
 
         // Buat objek tampilan dari semua produk
         List<Product> products = Arrays.asList(product1, product2);
