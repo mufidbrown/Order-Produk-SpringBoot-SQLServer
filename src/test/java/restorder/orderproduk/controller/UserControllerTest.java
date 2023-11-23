@@ -1,15 +1,20 @@
 package restorder.orderproduk.controller;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import restorder.orderproduk.controllers.UserController;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.service.UserService;
 
@@ -17,19 +22,22 @@ import restorder.orderproduk.service.UserService;
 @AutoConfigureMockMvc
 public class UserControllerTest {
 
+    @Autowired
+    private MockMvc mockMvc;
+//
+//        @Autowired
+//        private UserService userService;
+//
+//        @BeforeEach
+//        public void setUp() {
+//            userService.deleteAllUsers();
+//        }
 
+    @Mock
+    private UserService userService;
 
-
-        @Autowired
-        private MockMvc mockMvc;
-
-        @Autowired
-        private UserService userService;
-
-        @BeforeEach
-        public void setUp() {
-            userService.deleteAllUsers();
-        }
+    @InjectMocks
+    private UserController userController;
 
         @Test
         public void testGetAllUsers() throws Exception {
@@ -47,53 +55,52 @@ public class UserControllerTest {
 
         @Test
         public void testGetUserById() throws Exception {
-            User user = new User("John", "Doe", "john.doe@example.com");
+            User user = new User(1L, "John", "Jakarta", "john.doe@example.com", "081312344556", "secret12345678");
             User savedUser = userService.createUser(user);
 
-            mockMvc.perform(MockMvcRequestBuilders.get("/user/" + savedUser.getId()))
+            mockMvc.perform(MockMvcRequestBuilders.get("api/users/" + savedUser.getId()))
                     .andExpect(MockMvcResultMatchers.status().isOk())
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Matchers.is(user.getFirstName())));
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.username", Matchers.is(user.getUsername())));
         }
 
         @Test
         public void testCreateUser() throws Exception {
-            User user = new User("John", "Doe", "john.doe@example.com");
+            User user = new User(1L, "John", "Jakarta", "john.doe@example.com", "081312344556", "secret12345678");
 
-            mockMvc.perform(MockMvcRequestBuilders.post("/user/add")
+            mockMvc.perform(MockMvcRequestBuilders.post("api/users/add")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(new ObjectMapper().writeValueAsString(user)))
                     .andExpect(MockMvcResultMatchers.status().isCreated())
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Matchers.is(user.getFirstName())));
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.username", Matchers.is(user.getUsername())));
         }
 
         @Test
         public void testUpdateUser() throws Exception {
-            User user = new User("John", "Doe", "john.doe@example.com");
+            User user = new User(1L, "John", "Jakarta", "john.doe@example.com", "081312344556", "secret12345678");
             User savedUser = userService.createUser(user);
 
-            user.setFirstName("Jane");
-            user.setLastName("Smith");
-            user.setEmail("jane.smith@example.com");
+            user.setUsername("Joni");
+            user.setAlamat("Surabaya");
+            user.setEmail("joni@example.com");
 
-            mockMvc.perform(MockMvcRequestBuilders.put("/user/update/" + savedUser.getId())
+            mockMvc.perform(MockMvcRequestBuilders.put("api/users/update/{id}" + savedUser.getId())
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(new ObjectMapper().writeValueAsString(user)))
                     .andExpect(MockMvcResultMatchers.status().isOk())
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Matchers.is(user.getFirstName())));
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.username", Matchers.is(user.getUsername())));
         }
 
         @Test
         public void testDeleteUser() throws Exception {
-            User user = new User("John", "Doe", "john.doe@example.com");
+            User user = new User(1L, "John", "Jakarta", "john.doe@example.com", "081312344556", "secret12345678");
             User savedUser = userService.createUser(user);
 
-            mockMvc.perform(MockMvcRequestBuilders.delete("/user/delete/" + savedUser.getId()))
+            mockMvc.perform(MockMvcRequestBuilders.delete("api/users/delete/{id}" + savedUser.getId()))
                     .andExpect(MockMvcResultMatchers.status().isNoContent());
         }
 
-    }
+    } //keyword: buatkan saya UserControllerTest dengan kode ini
 
-}
 
 
 

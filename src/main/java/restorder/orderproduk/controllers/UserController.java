@@ -79,7 +79,4 @@ public class UserController {
             return ResponseEntity.ok(BaseResponse.error("User Tidak Ditemukan"));
         }
     }
-
-
-
 }
