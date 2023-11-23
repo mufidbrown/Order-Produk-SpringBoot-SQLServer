@@ -29,7 +29,7 @@ public class ProductServiceTest {
     @Test
     public void testCreateProduct() {
         // Prepare data
-        Product product = new Product(1L, "Product 1", 2, 10000, "Description 1");
+        Product product = new Product(5L, "Product 1", 2, 10000, "Description 1");
 
         // Mock behaviour
         when(productRepository.save(product)).thenReturn(product);
