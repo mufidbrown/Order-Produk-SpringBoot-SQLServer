@@ -44,6 +44,18 @@ public class ProductControllerTest {
         assertEquals(productList, responseEntity.getBody());
     }
 
+    @Test
+    public void testGetProductById() {
+        Long productId = 1L;
+        Product product = new Product(); // Create a dummy product or use Mockito to mock product data
+
+        when(productService.getProductById(productId)).thenReturn(product);
+
+        ResponseEntity<Product> responseEntity = productController.getProductById(productId);
+
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertEquals(product, responseEntity.getBody());
+    }
 
 
 
@@ -51,7 +63,7 @@ public class ProductControllerTest {
 
 
 
-    
+
     // untuk inject dependencies Unit Test nya pakai JunitTest / JupiterTest? soalnya di pom.xml
     //terdapat dependencies Junit & Jupiter
 
