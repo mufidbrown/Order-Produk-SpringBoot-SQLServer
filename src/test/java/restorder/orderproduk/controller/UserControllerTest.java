@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -124,6 +125,19 @@ public class UserControllerTest {
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals(user, responseEntity.getBody());
+    }
+
+    @Test
+    public void testDeleteUser(){
+        // Arrange
+        Long userId = 1L;
+
+        // Act
+        ResponseEntity<Void> responseEntity = userController.deleteUser(userId);
+
+        // Assert
+        assertEquals(HttpStatus.NO_CONTENT, responseEntity.getStatusCode());
+        Mockito.verify(userService, Mockito.times(1)).deleteUser(userId);
     }
 
 }
