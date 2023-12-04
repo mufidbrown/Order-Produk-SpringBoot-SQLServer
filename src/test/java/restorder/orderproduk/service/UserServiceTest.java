@@ -11,7 +11,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.repositories.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserServiceTest {
@@ -20,6 +25,27 @@ public class UserServiceTest {
 
     @Mock
     private UserRepository userRepository;
+
+    @Test
+    public void getAllUsers() {
+        //given
+        List<User> users = new ArrayList<>();
+        users.add(new User(1L, "John", "Jakarta", "john.doe@example.com", "081312344556", "secret12345678"));
+        users.add(new User(2L, "John", "Jakarta", "john.doe@example.com", "081312344556", "secret12345678"));
+
+        when(userRepository.findAll()).thenReturn(users);
+
+        //when
+        List<User> found = userService.getAllUsers();
+
+        //then
+        assertThat(found).isNotNull();
+        assertThat(found).hasSize(2);
+        assertThat(found.get(0).getId()).isEqualTo(1L);
+        assertThat(found.get(0).getUsername()).isEqualTo("John");
+        assertThat(found.get(0).getAlamat()).isEqualTo("Jakarta");
+        assertThat(found.get(0).getEmail()).isEqualTo("john.doe@example.com");
+    }
 
 
 //    @Test
