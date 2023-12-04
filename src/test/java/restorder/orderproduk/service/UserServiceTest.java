@@ -3,11 +3,15 @@ package restorder.orderproduk.service;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.repositories.UserRepository;
 
@@ -18,7 +22,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class UserServiceTest {
     @InjectMocks
     private UserService userService;
