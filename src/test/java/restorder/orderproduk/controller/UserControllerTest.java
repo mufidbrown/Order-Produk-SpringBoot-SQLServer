@@ -9,17 +9,22 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import restorder.orderproduk.controllers.UserController;
+import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.service.UserService;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -67,6 +72,19 @@ public class UserControllerTest {
 //    }
 
 
+
+    @Test
+    public void testGetAllUsers() {
+        List<User> userList = new ArrayList<>();
+        // Add some dummy products to the list or use Mockito to mock product data
+
+        when(userService.getAllUsers()).thenReturn(userList);
+
+        ResponseEntity<List<User>> responseEntity = userController.getAllUsers();
+
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertEquals(userList, responseEntity.getBody());
+    }
 
         @Test
         public void  testCreateUser() throws Exception{
