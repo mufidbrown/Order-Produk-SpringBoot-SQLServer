@@ -17,10 +17,14 @@ public class Product {
     private double price;
     private String description;
 
+    
 
-//    public Product(long l, String gitar, int i, double v, String akustik) {
-//
-//    }
+    public Product() {
+    }
+
+    public Product(long l, String keyboard, int i, double v, String mechanical) {
+    }
+
 
     public Long getId() {
         return id;
