@@ -113,4 +113,17 @@ public class UserControllerTest {
             Assert.assertEquals(result.getUsername(), "rahul_updated");
         }
 
+    @Test
+    public void testGetUserById() {
+        Long userId = 1L;
+        User user = new User(); // Create a dummy product or use Mockito to mock product data
+//        1L, "gitar", 2, 1.000000, "akustik"
+        when(userService.getUserById(userId)).thenReturn(user);
+
+        ResponseEntity<User> responseEntity = userController.getUserById(userId);
+
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertEquals(user, responseEntity.getBody());
     }
+
+}
