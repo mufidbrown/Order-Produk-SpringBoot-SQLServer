@@ -40,4 +40,8 @@ public class UserService {
         userRepository.save(user);
         return user;
     }
+
+    public List<User> getUsersByAlamat(String alamat) {
+        return userRepository.findByAlamat(alamat);
+    }
 }
