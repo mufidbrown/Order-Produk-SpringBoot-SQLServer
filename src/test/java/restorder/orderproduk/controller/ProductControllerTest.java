@@ -24,10 +24,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 
 
 
@@ -80,34 +78,45 @@ public class ProductControllerTest {
     }
 
 
+    @Test
+    public void testUpdateProduct_Success() {
+        // Mock data
+        Long productId = 1L;
+        Product mockProduct = new Product();
+        mockProduct.setId(productId);
+        mockProduct.setName("drum");
+        mockProduct.setQuantity(2);
+        mockProduct.setPrice(50000000);
 
 
-//    @Test
-//    public void  testCreateProduct() throws Exception{
-//        Product input = new Product(1L, "keyboard", 2, 500.000, "mechanical");
-//        Product returned = new Product(1L, "keyboard", 2, 500.000, "mechanical");
-//        //stub the data
-//        when(productService.createProduct(input)).thenReturn(returned);
-//
-//        //original method call
-//        Product result = productController.createProduct(input).getBody();
-//
-//        Assert.assertEquals(result.getName(),"keyboard");
-//    }
+        when(productService.updateProduct(eq(productId), any(Product.class))).thenReturn(mockProduct);
 
+        ResponseEntity<Product> responseEntity = productController.updateProduct(productId, mockProduct);
+
+        verify(productService, times(1)).updateProduct(eq(productId), any(Product.class));
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+
+        Product updatedProduct = responseEntity.getBody();
+        assertEquals(mockProduct.getId(), updatedProduct.getId());
+        assertEquals(mockProduct.getName(), updatedProduct.getName());
+    }
 
     @Test
-    public void testUpdateProduct() throws Exception{
-        Long product = 1L;
-        Product input = new Product(1L, "piano", 3, 1000.000, "bagus");
-        Product returned = new Product(1L, "piano_updated", 3, 1000.000, "bagus");
-        //stub the data
-        when(productService.updateProduct(1L,input)).thenReturn(returned);
-        //original method call
-        Product result = productController.updateProduct(1L,input).getBody();
+    public void testUpdateProduct_NotFound() {
+        // Mock data for a non-existent product
+        Long nonExistentProductId = 100L;
+        Product mockProduct = new Product();
+        mockProduct.setId(nonExistentProductId);
+        mockProduct.setName("Updated Product");
 
-        Assert.assertEquals(result.getName(), "piano_updated");
+        when(productService.updateProduct(eq(nonExistentProductId), any(Product.class))).thenReturn(null);
+
+        ResponseEntity<Product> responseEntity = productController.updateProduct(nonExistentProductId, mockProduct);
+
+        verify(productService, times(1)).updateProduct(eq(nonExistentProductId), any(Product.class));
+        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
     }
+
 
     @Test
     public void testGetProductById() {
@@ -135,3 +144,36 @@ public class ProductControllerTest {
         verify(productService, Mockito.times(1)).deleteProduct(productId);
     }
 }
+
+
+
+
+
+
+
+//    @Test
+//    public void  testCreateProduct() throws Exception{
+//        Product input = new Product(1L, "keyboard", 2, 500.000, "mechanical");
+//        Product returned = new Product(1L, "keyboard", 2, 500.000, "mechanical");
+//        //stub the data
+//        when(productService.createProduct(input)).thenReturn(returned);
+//
+//        //original method call
+//        Product result = productController.createProduct(input).getBody();
+//
+//        Assert.assertEquals(result.getName(),"keyboard");
+//    }
+
+
+//    @Test
+//    public void testUpdateProduct() throws Exception{
+//        Long product = 1L;
+//        Product input = new Product(1L, "piano", 3, 1000.000, "bagus");
+//        Product returned = new Product(1L, "piano_updated", 3, 1000.000, "bagus");
+//        //stub the data
+//        when(productService.updateProduct(1L,input)).thenReturn(returned);
+//        //original method call
+//        Product result = productController.updateProduct(1L,input).getBody();
+//
+//        Assert.assertEquals(result.getName(), "piano_updated");
+//    }
