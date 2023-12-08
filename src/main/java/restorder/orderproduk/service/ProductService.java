@@ -21,8 +21,11 @@ public class ProductService {
     }
 
     public Product updateProduct(Long id, Product product) {
-        productRepository.save(product);
-        return product;
+        Product productEntity= productRepository.findById(id).orElse(new Product());
+        productEntity.setPrice(product.getPrice());
+        productEntity.setName(product.getName());
+        productRepository.save(productEntity);
+        return productEntity;
     }
 
     public void deleteProduct(Long id) {

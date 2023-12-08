@@ -81,7 +81,7 @@ public class ProductControllerTest {
     @Test
     public void testUpdateProduct_Success() {
         // Mock data
-        Long productId = 1L;
+        Long productId = 8L;
         Product mockProduct = new Product();
         mockProduct.setId(productId);
         mockProduct.setName("drum");

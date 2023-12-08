@@ -1,53 +1,80 @@
 package restorder.orderproduk.repository;
 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.repositories.UserRepository;
-import restorder.orderproduk.service.UserService;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
-//import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+
+@ExtendWith(SpringExtension.class)
+@DataJpaTest
+@AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.HSQLDB)
 public class UserRepositoryTest {
 
-    @Mock
+    @Autowired
     private UserRepository userRepository;
 
-    @InjectMocks
-    private UserService userService;
+    private User user;
 
     @BeforeEach
-    public void init() {
-        MockitoAnnotations.initMocks(this);
+    public void setUp() {
+        user = userRepository.save(User
+                .builder()
+                .username("Ilham Mufid")
+                .alamat("Surabaya")
+                .email("ilham@gmail.com")
+                .telepon("081312345678")
+                .password("12345678")
+                .build()
+        );
     }
 
     @Test
-    public void testFindByAlamat() {
-        // Membuat daftar pengguna palsu dengan alamat yang sama
-        String alamat = "karawang";
-        List<User> users = new ArrayList<>();
-        users.add(new User(1L, "User1", "karawang", "user1@gmail.com", "085112345678", "12345678"));
-        users.add(new User(2L, "User2", "bekasi", "user2@gmail.com", "08587654321", "87654321"));
-
-
-        when(userRepository.findByAlamat(alamat)).thenReturn(users);
-
-        List<User> foundUsers = userService.getUsersByAlamat(alamat);
-
-        assertEquals(2, foundUsers.size());
-
-        assertEquals(alamat, foundUsers.get(0).getAlamat());
-        assertEquals(alamat, foundUsers.get(1).getAlamat());
+    public void shouldFindUserByEmail() {
+        Optional<User> foundUser = userRepository.findByEmail(user.getEmail());
+        assertThat(foundUser).isPresent();
+        assertThat(foundUser.get()).isEqualTo(user);
     }
+
+    @Test
+    public void shouldReturnEmptyOptionalWhenUserDoesNotExistByEmail() {
+        Optional<User> foundUser = userRepository.findByEmail("invalid-email@example.com");
+        assertThat(foundUser).isEmpty();
+    }
+
+    @Test
+    public void shouldExistsByEmail() {
+        Boolean exists = userRepository.existsByEmail(user.getEmail());
+        assertThat(exists).isTrue();
+    }
+
+    @Test
+    public void shouldNotExistsByEmailWhenUserDoesNotExist() {
+        Boolean exists = userRepository.existsByEmail("invalid-email@example.com");
+        assertThat(exists).isFalse();
+    }
+
+    @Test
+    public void shouldExistsByTelepon() {
+        Boolean exists = userRepository.existsByTelepon(user.getTelepon());
+        assertThat(exists).isTrue();
+    }
+
+    @Test
+    public void shouldNotExistsByTeleponWhenUserDoesNotExist() {
+        Boolean exists = userRepository.existsByTelepon("081312345678");
+        assertThat(exists).isFalse();
+    }
+
+
 }

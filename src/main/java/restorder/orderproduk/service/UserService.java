@@ -41,7 +41,4 @@ public class UserService {
         return user;
     }
 
-    public List<User> getUsersByAlamat(String alamat) {
-        return userRepository.findByAlamat(alamat);
-    }
 }
