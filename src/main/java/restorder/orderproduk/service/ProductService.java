@@ -20,7 +20,7 @@ public class ProductService {
         return productRepository.findById(id).orElse(null);
     }
 
-    //update 08/12
+    //update 08/12/2023
     public Product updateProduct(Long id, Product product) {
         Product productEntity= productRepository.findById(id).orElse(new Product());
         productEntity.setPrice(product.getPrice());
