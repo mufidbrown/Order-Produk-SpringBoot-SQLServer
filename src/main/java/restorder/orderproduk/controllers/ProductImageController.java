@@ -11,7 +11,6 @@ import restorder.orderproduk.service.ProductImageService;
 
 import java.io.IOException;
 
-import static java.awt.SystemColor.text;
 
 @RestController
 public class ProductImageController {
@@ -24,7 +23,7 @@ public class ProductImageController {
     public ResponseEntity<ResponseMessage> uploadImage(@RequestParam("productImage") MultipartFile file) throws IOException {
         productImageService.uploadImage(file);
         String message = "Upload JPG Sukses: " + file.getOriginalFilename();
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message+text));
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
     }
 
     @GetMapping("/download/{fileName}")

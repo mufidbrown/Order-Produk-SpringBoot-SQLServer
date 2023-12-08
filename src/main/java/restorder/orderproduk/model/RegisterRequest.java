@@ -1,9 +1,11 @@
 package restorder.orderproduk.model;
 
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.intellij.lang.annotations.RegExp;
 
 @Data
 @Builder
@@ -11,8 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegisterRequest {
 
-    private String email;
 
+    private String email;
+    @Size(min = 8, max = 10)
     private String password;
 
 

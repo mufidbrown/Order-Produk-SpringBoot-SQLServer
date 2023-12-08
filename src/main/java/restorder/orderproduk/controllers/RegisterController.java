@@ -1,6 +1,7 @@
 package restorder.orderproduk.controllers;
 
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
@@ -15,7 +16,7 @@ public class RegisterController {
     private RegisterService registerService;
 
     @PostMapping("/post")
-    public BaseResponse<?> register(@RequestBody RegisterRequest registerRequest){
+    public BaseResponse<?> register(@RequestBody @Valid RegisterRequest registerRequest){
 //        public BaseResponse<?> register(@RequestMapping RegisterRequest registerRequest){
 //            public BaseResponse<?> register(@RequestParam RegisterRequest registerRequest){
                 return registerService.register(registerRequest);
