@@ -6,9 +6,12 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import restorder.orderproduk.message.ResponseMessage;
 import restorder.orderproduk.service.ProductImageService;
 
 import java.io.IOException;
+
+import static java.awt.SystemColor.text;
 
 @RestController
 public class ProductImageController {
@@ -18,8 +21,10 @@ public class ProductImageController {
 
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping("/upload")
-    public void uploadImage(@RequestParam("productImage") MultipartFile file) throws IOException {
+    public ResponseEntity<ResponseMessage> uploadImage(@RequestParam("productImage") MultipartFile file) throws IOException {
         productImageService.uploadImage(file);
+        String message = "Upload JPG Sukses: " + file.getOriginalFilename();
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message+text));
     }
 
     @GetMapping("/download/{fileName}")
