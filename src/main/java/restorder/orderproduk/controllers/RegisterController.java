@@ -15,6 +15,8 @@ public class RegisterController {
     @Autowired
     private RegisterService registerService;
 
+
+//    ngecek validasi isi2 an: berapa panjang String, Maksimal/Minimal huruf angka, dan jumlah isian seperti password
     @PostMapping("/post")
     public BaseResponse<?> register(@RequestBody @Valid RegisterRequest registerRequest){
 //        public BaseResponse<?> register(@RequestMapping RegisterRequest registerRequest){
