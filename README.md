@@ -17,6 +17,13 @@ Backend Services:
 11. Unit Test
 12. Integration Test
 
+EBalita:
+
+10/01/2024
+-kurang approve,reject, & verifikasi ubah data
+-CRUD Udah, tinggal nambah fitur Export Excel, tambah dokumen / Upload, & download file
+-tinggal nambah grafik
+
 08/12/2023 : Validasi 
 
 
