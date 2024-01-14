@@ -28,5 +28,11 @@ EBalita:
 
 
 
+# penting untuk mengetahui "Flow Aplikasi" ketika mau Build atau proses Development
+# penting untuk mengetahui "Probis / Proses Bisnis" ketika mau Build atau proses Development
+
+
+
+
     
     
