@@ -30,6 +30,9 @@ EBalita:
 
 # penting untuk mengetahui "Flow Aplikasi" ketika mau Build atau proses Development
 # penting untuk mengetahui "Probis / Proses Bisnis" ketika mau Build atau proses Development
+# buatkan code java spring boot untuk proses Aktifasi Akun yang mempunyai flow proses Persetujuan terlebih dulu dari Admin
+
+
 
 
 
