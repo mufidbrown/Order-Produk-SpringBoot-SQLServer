@@ -16,6 +16,7 @@ Backend Services:
 10. Import Excel in Spring Boot
 11. Unit Test
 12. Integration Test
+13. Security. menerapkan owasp 10, xss, sql injection, dll
 
 EBalita:
 
