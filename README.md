@@ -17,6 +17,7 @@ Backend Services:
 11. Unit Test
 12. Integration Test
 13. Security. menerapkan owasp 10, xss, sql injection, dll
+14. Dynamic Column
 
 EBalita:
 
