@@ -18,6 +18,8 @@ Backend Services:
 12. Integration Test
 13. Security. menerapkan owasp 10, xss, sql injection, dll
 14. Dynamic Column
+15. JSON Object with File Upload in Spring Rest API Example
+
 
 EBalita:
 
