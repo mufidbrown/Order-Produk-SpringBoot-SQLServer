@@ -21,6 +21,14 @@ Backend Services:
 15. JSON Object with File Upload in Spring Rest API Example
 
 
+Masukkan Mas Darmo dan Mas Auzan:
+1. spring boot data seeder
+2. java spring boot role management dan permissions
+3. swealling/swelling database
+4. indexing database
+   
+
+
 EBalita:
 
 10/01/2024
