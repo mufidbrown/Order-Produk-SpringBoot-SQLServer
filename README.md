@@ -26,6 +26,7 @@ Masukkan Mas Darmo dan Mas Auzan:
 2. java spring boot role management dan permissions
 3. swealling/swelling database
 4. indexing database
+5. sampling database, data palsu yang kemudian ketika melakukan Query cuma select * from apa gitu udah nampil semua datanya.
    
 
 
