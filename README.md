@@ -28,6 +28,7 @@ Masukkan Mas Darmo dan Mas Auzan:
 3. swealling/swelling database
 4. indexing database
 5. sampling database, data palsu yang kemudian ketika melakukan Query cuma select * from apa gitu udah nampil semua datanya.
+6. Kamu harus tau ketika menDevelop Backend, aplikasi Backend mau dibawa kemana? kan ga mungkin disisi server doang. tapi kamu kan juga harus tau cara kerja aplikasi Frontend yang diDevelop juga
 
 Masukkan Mbok Tuk:
 1. lak belajar dan praktek sing getol
