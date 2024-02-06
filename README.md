@@ -20,6 +20,7 @@ Backend Services:
 14. Dynamic Column
 15. JSON Object with File Upload in Spring Rest API Example
 16. harus tau Flyway database
+17. harus tau Hibernate & myBatis
 
 
 Masukkan Mas Darmo dan Mas Auzan:
