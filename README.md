@@ -21,6 +21,7 @@ Backend Services:
 15. JSON Object with File Upload in Spring Rest API Example
 16. harus tau Flyway database
 17. harus tau Hibernate & myBatis
+18. mengintegrasikan layanan email pada proyek Spring Boot menggunakan JavaMail.
 
 
 Masukkan Mas Darmo dan Mas Auzan:
