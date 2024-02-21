@@ -22,7 +22,14 @@ Backend Services:
 16. harus tau Flyway database
 17. harus tau Hibernate & myBatis
 18. mengintegrasikan layanan email pada proyek Spring Boot menggunakan JavaMail.
-19. Bulet itu One, setengah bulet itu many. jadi One To Many
+
+Database Engineer:
+1. Review Task dari UI/UX, Flow Bisnis, Proses Bisnis Yang diberikan
+2. Analys Design
+3. Create Flow
+4. Create ERD
+5. Bulet itu One, setengah bulet itu many. jadi One To Many
+
 
 
 Masukkan Mas Darmo dan Mas Auzan:
