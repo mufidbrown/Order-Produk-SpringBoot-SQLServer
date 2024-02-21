@@ -27,7 +27,7 @@ Database Engineer:
 1. Review Task dari UI/UX, Flow Bisnis, Proses Bisnis Yang diberikan
 2. Analys Design
 3. Create Flow
-4. Create ERD
+4. Create ERD (Entity Relation Diagram/Database)
 5. Bulet itu One, setengah bulet itu many. jadi One To Many
 
 
