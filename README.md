@@ -1,4 +1,9 @@
 # Order-Produk-SpringBoot
+if you want something you never had
+yu have to do something you've never done
+
+jika kamu menginginkan sesuatu yang belum pernah kamu miliki
+kamu harus melakukan sesuatu yang belum pernah kamu lakukan
 
 ini adalah proyek pribadi saya yang sudah berhasil menjalankan sebuah restfull api. 
 mulai dari: POST, GET, PUT, & DELETE.
