@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.repositories.ProductRepository;
@@ -27,7 +28,7 @@ public class ProductServiceTest {
     private ProductRepository productRepository;
 
     @InjectMocks
-    private ProductsService productService;
+    private ProductService productService;
 
     @Test
     public void testGetProductById() {

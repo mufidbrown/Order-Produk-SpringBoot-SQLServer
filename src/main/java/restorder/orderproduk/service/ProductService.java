@@ -8,7 +8,7 @@ import restorder.orderproduk.repositories.ProductRepository;
 import java.util.List;
 
 @Service
-public class ProductsService {
+public class ProductService {
 
     @Autowired
     private ProductRepository productRepository;
