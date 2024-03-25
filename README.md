@@ -1,4 +1,9 @@
 # Order-Produk-SpringBoot
+if you want something you never had
+yu have to do something you've never done
+
+jika kamu menginginkan sesuatu yang belum pernah kamu miliki
+kamu harus melakukan sesuatu yang belum pernah kamu lakukan
 
 ini adalah proyek pribadi saya yang sudah berhasil menjalankan sebuah restfull api. 
 mulai dari: POST, GET, PUT, & DELETE.
@@ -20,6 +25,16 @@ Backend Services:
 14. Dynamic Column
 15. JSON Object with File Upload in Spring Rest API Example
 16. harus tau Flyway database
+17. harus tau Hibernate & myBatis
+18. mengintegrasikan layanan email pada proyek Spring Boot menggunakan JavaMail.
+
+Database Engineer:
+1. Review Task dari UI/UX, Flow Bisnis, Proses Bisnis Yang diberikan
+2. Analys Design
+3. Create Flow
+4. Create ERD (Entity Relation Diagram/Database)
+5. Bulet itu One, setengah bulet itu many. jadi One To Many
+
 
 
 Masukkan Mas Darmo dan Mas Auzan:
@@ -51,6 +66,8 @@ EBalita:
 # penting untuk mengetahui "Flow Aplikasi" ketika mau Build atau proses Development
 # penting untuk mengetahui "Probis / Proses Bisnis" ketika mau Build atau proses Development
 # buatkan code java spring boot untuk proses Aktifasi Akun yang mempunyai flow proses Persetujuan terlebih dulu dari Admin
+# praktek Backend Java Spring Boot Database & Relasi Table, untuk praktek fullstack pake MERN/Laravel. untuk fullstack buat mengerti flow / hubungan antara frontend dengan backend aja, selebihnya fokuskan java spring BACKEND. Untuk bisa Expert di Java Spring Database
+
 
 
 
