@@ -2,15 +2,18 @@ package restorder.orderproduk.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-@Table(name = "users")
 @Builder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@Table(name = "users", uniqueConstraints = {
+                @UniqueConstraint(columnNames = "username"),
+                @UniqueConstraint(columnNames = "email")})
+public class User extends TimestampedEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
