@@ -1,44 +1,47 @@
 package restorder.orderproduk.entity;
 
 
-import jakarta.persistence.*;
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
+import javax.persistence.*;
+import java.util.Collection;
+
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order extends TimestampedEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-    @Enumerated(EnumType.STRING)
-    @Column(name = "order_status")
-    private OrderType orderStatus;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id")
-    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @Column(name = "shipping_type")
-    private Long shippingType;
+    String trackingNumber;
 
-    @Column(name = "city")
-    private String city;
+//    @Enumerated
+//    OrderStatus orderStatus;
 
-    @Column(name = "address")
-    private String address;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    private Address address;
 
-    @Column(name = "total_price")
-    private Float totalPrice;
+//     TODO: think more about consequence of cascade remove ... not sure
+//     It is mapped by OrderItem:: "order"
 
-    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private Delivery delivery;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    Collection<OrderItem> orderItems;
+
+    // @Type(type = "org.hibernate.type.NumericBooleanType")
+    // @Column(name = "delivered", nullable = false)
+    // private Boolean delivered = false;
+
+    @Transient
+    double total;
+
+    @Transient
+    private Long orderItemsCount;
+
+
+
 }

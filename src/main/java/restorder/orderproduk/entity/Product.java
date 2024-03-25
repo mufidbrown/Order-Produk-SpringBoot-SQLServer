@@ -1,7 +1,8 @@
 package restorder.orderproduk.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 
 @Getter
@@ -11,8 +12,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "products")
-//@AllArgsConstructor
-public class Product {
+public class Product extends TimestampedEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
