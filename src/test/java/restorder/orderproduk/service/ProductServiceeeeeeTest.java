@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 public class ProductServiceeeeeeTest {
 
     @Autowired
-    private ProductService productService;
+    private ProductsService productService;
 
     @MockBean
     private ProductRepository productRepository;

@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,7 +21,8 @@ import java.util.Set;
                 @UniqueConstraint(columnNames = "email")})
 public class User extends TimestampedEntity implements UserDetails {
 
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Address> addresses;
 
     @Column(nullable = false, length = 100, unique = true)
     private String username;
@@ -31,9 +33,8 @@ public class User extends TimestampedEntity implements UserDetails {
     private String password; // Bcrypt hashed password
 
     private String firstName;
+
     private String lastName;
-
-
 
 
     @ManyToMany(cascade = CascadeType.MERGE)
@@ -49,57 +50,36 @@ public class User extends TimestampedEntity implements UserDetails {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.REMOVE)
     Collection<Comment> comments;
 
+    /**
+     * Please notice this relationship One to Many through a Join table is unidirectional, we will not
+     * write an assotiation in the Order class
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    public Set<Order> orders;
 
 
-
-    public Long getId() {
-        return id;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
     }
 
-    public String getUsername() {
-        return username;
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
     }
 
-    public String getAlamat() {
-        return alamat;
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
     }
 
-    public String getEmail() {
-        return email;
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
-
-    public String getTelepon() {
-        return telepon;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setTelepon(String telepon) {
-        this.telepon = telepon;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
 }

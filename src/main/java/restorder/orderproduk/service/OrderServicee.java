@@ -8,7 +8,7 @@ import restorder.orderproduk.exception.OrderNotFoundException;
 
 import java.util.List;
 
-public interface OrderService {
+public interface OrderServicee {
 
     public List<Order> getAllOrders();
 
