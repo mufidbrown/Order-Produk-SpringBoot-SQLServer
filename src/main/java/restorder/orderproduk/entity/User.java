@@ -2,6 +2,7 @@ package restorder.orderproduk.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import restorder.orderproduk.enums.UserRole;
 
 @Entity
 @Table(name = "users")

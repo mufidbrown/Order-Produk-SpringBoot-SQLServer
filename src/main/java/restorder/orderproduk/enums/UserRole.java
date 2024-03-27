@@ -1,4 +1,4 @@
-package restorder.orderproduk.entity;
+package restorder.orderproduk.enums;
 
 public enum UserRole {
 
