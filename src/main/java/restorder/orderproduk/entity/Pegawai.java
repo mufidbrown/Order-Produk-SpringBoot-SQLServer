@@ -1,6 +1,5 @@
 package restorder.orderproduk.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity

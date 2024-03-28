@@ -16,13 +16,13 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_users")
-//    private User user;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "id_products")
-//    private Product product;
+    @ManyToOne
+    @JoinColumn(name = "id_users")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "id_products")
+    private Product product;
 
 
     private LocalDateTime transactionDate;
