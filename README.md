@@ -71,6 +71,7 @@ EBalita:
 Untuk Ngoding samakan semua fiturnya, rubah style codenya dengan menggunakan style pengkodean saya sendiri.
 untuk RELASI nya samakan.
 
+buat sistem penanaman modal, dan ini juga bisa jadi ide untuk inovasi di perbankan nanti
 
 
 
