@@ -1,4 +1,4 @@
-package restorder.orderproduk.controllers;
+package restorder.orderproduk.controllers.ConsumeRestApi.Register;
 
 
 import jakarta.validation.Valid;

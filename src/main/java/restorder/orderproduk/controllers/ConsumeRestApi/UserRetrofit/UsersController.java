@@ -1,9 +1,9 @@
-package restorder.orderproduk.controllers.ConsumeRestApi;
+package restorder.orderproduk.controllers.ConsumeRestApi.UserRetrofit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.service.ConsumeRestApi.UserService;
+import restorder.orderproduk.service.ConsumeRestApi.UserRetrofit.UserService;
 
 @RestController
 @RequestMapping("/users")

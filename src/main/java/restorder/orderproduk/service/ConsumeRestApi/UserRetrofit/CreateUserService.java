@@ -1,4 +1,4 @@
-package restorder.orderproduk.service.ConsumeRestApi.CreateUser;
+package restorder.orderproduk.service.ConsumeRestApi.UserRetrofit;
 
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.CreateUserRequest;

@@ -1,4 +1,4 @@
-package restorder.orderproduk.controllers.ConsumeRestApi;
+package restorder.orderproduk.controllers.ConsumeRestApi.Nation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

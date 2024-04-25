@@ -1,10 +1,10 @@
-package restorder.orderproduk.controllers;
+package restorder.orderproduk.controllers.ConsumeRestApi.UserRetrofit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.UpdateUserRequest;
-import restorder.orderproduk.service.userrr.UpdateUserService;
+import restorder.orderproduk.service.ConsumeRestApi.UserRetrofit.UpdateUserService;
 
 @RestController
 @RequestMapping("/update")

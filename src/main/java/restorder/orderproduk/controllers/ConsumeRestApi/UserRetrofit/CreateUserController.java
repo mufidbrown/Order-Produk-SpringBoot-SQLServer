@@ -1,4 +1,4 @@
-package restorder.orderproduk.controllers.ConsumeRestApi;
+package restorder.orderproduk.controllers.ConsumeRestApi.UserRetrofit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.CreateUserRequest;
-import restorder.orderproduk.service.ConsumeRestApi.CreateUser.CreateUserService;
+import restorder.orderproduk.service.ConsumeRestApi.UserRetrofit.CreateUserService;
 
 @RestController
 @RequestMapping("/create")

@@ -1,4 +1,4 @@
-package restorder.orderproduk.service.ConsumeRestApi;
+package restorder.orderproduk.service.ConsumeRestApi.UserRetrofit;
 
 import restorder.orderproduk.api.BaseResponse;
 

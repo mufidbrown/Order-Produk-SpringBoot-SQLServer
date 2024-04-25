@@ -1,21 +1,22 @@
-package restorder.orderproduk.controllers.ConsumeRestApi;
+package restorder.orderproduk.controllers.ConsumeRestApi.Retrofit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.service.ConsumeRestApi.cat.CatsService;
+import restorder.orderproduk.service.ConsumeRestApi.retrofit.RetrofitService;
 
 @RestController
-@RequestMapping("/cats")
-public class CatsController {
+@RequestMapping("/retrofit")
+public class RetrofitController {
 
     @Autowired
-    private CatsService catsService;
+    private RetrofitService retrofitService;
 
     @GetMapping("/get")
-    public BaseResponse<?> cats(){
-        return catsService.cats();
+    public BaseResponse<?> github(){
+        return retrofitService.github();
     }
+
 }
