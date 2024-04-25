@@ -5,9 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.entity.Pegawai;
 import restorder.orderproduk.entity.Product;
-import restorder.orderproduk.service.ProductService;
+import restorder.orderproduk.service.product.ProductService;
 
 import java.util.List;
 

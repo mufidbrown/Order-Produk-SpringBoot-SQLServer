@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.UpdateUserRequest;
-import restorder.orderproduk.service.user.UpdateUserService;
+import restorder.orderproduk.service.userrr.UpdateUserService;
 
 @RestController
 @RequestMapping("/update")

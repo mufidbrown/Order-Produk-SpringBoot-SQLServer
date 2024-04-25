@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import restorder.orderproduk.controllers.UserController;
 import restorder.orderproduk.entity.User;
-import restorder.orderproduk.service.UserService;
+import restorder.orderproduk.service.user.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

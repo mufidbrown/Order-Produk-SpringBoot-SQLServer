@@ -1,7 +1,5 @@
 package restorder.orderproduk.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
@@ -12,11 +10,9 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import restorder.orderproduk.controllers.ProductController;
 import restorder.orderproduk.entity.Product;
-import restorder.orderproduk.service.ProductService;
+import restorder.orderproduk.service.product.ProductService;
 
 import java.util.ArrayList;
 import java.util.List;

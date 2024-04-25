@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.entity.Pegawai;
-import restorder.orderproduk.service.PegawaiService;
+import restorder.orderproduk.service.pegawai.PegawaiService;
 
 import java.util.List;
 

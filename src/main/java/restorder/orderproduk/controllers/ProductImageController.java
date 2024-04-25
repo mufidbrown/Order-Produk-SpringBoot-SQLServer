@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import restorder.orderproduk.message.ResponseMessage;
-import restorder.orderproduk.service.ProductImageService;
+import restorder.orderproduk.service.UploadImage.ProductImageService;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class ProductImageController {
     private ProductImageService productImageService;
 
     @ResponseStatus(value = HttpStatus.OK)
-    @PostMapping("/upload")
+    @PostMapping("/upload/image")
     public ResponseEntity<ResponseMessage> uploadImage(@RequestParam("productImage") MultipartFile file) throws IOException {
         productImageService.uploadImage(file);
         String message = "Upload JPG Sukses: " + file.getOriginalFilename();

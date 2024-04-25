@@ -5,11 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.entity.Pegawai;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.exception.ResourceNotFoundException;
 import restorder.orderproduk.model.TransactionRequest;
-import restorder.orderproduk.service.TransactionService;
+import restorder.orderproduk.service.transaction.TransactionService;
 
 import java.util.List;
 
