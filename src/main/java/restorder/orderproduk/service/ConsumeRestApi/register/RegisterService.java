@@ -1,7 +1,7 @@
 package restorder.orderproduk.service.ConsumeRestApi.register;
 
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.model.RegisterRequest;
+import restorder.orderproduk.model.ConsumeRestApi.RegisterRequest;
 
 public interface RegisterService {
 

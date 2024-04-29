@@ -1,4 +1,4 @@
-package restorder.orderproduk.model;
+package restorder.orderproduk.model.ConsumeRestApi;
 
 import lombok.*;
 

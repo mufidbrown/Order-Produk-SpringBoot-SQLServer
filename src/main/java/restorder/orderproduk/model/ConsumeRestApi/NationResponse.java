@@ -1,9 +1,10 @@
-package restorder.orderproduk.model;
+package restorder.orderproduk.model.ConsumeRestApi;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import restorder.orderproduk.model.ConsumeRestApi.CountryResponse;
 
 import java.util.ArrayList;
 

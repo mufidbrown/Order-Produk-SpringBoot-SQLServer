@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.api.ApiRetrofit;
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.model.NationResponse;
+import restorder.orderproduk.model.ConsumeRestApi.NationResponse;
 import retrofit2.Retrofit;
 
 import java.util.concurrent.atomic.AtomicReference;

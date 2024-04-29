@@ -1,4 +1,4 @@
-package restorder.orderproduk.model;
+package restorder.orderproduk.model.ConsumeRestApi;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateUserRequest {
+public class CountryResponse {
 
-    private String name;
+    private String country_id;
 
-    private String job;
-
+//    private Long probability;
 }

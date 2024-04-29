@@ -1,8 +1,8 @@
 package restorder.orderproduk.api;
 
 import io.reactivex.Single;
-import org.springframework.web.bind.annotation.RequestBody;
 import restorder.orderproduk.model.*;
+import restorder.orderproduk.model.ConsumeRestApi.*;
 import retrofit2.http.*;
 
 public interface ApiRetrofit {

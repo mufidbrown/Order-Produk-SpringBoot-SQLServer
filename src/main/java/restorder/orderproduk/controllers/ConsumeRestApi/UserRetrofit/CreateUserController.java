@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.model.CreateUserRequest;
+import restorder.orderproduk.model.ConsumeRestApi.CreateUserRequest;
 import restorder.orderproduk.service.ConsumeRestApi.UserRetrofit.CreateUserService;
 
 @RestController

@@ -1,4 +1,4 @@
-package restorder.orderproduk.model;
+package restorder.orderproduk.model.ConsumeRestApi;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,14 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateUserResponse {
+public class UpdateUserRequest {
 
     private String name;
 
     private String job;
-
-    private String id;
-
-    private String createdAt;
 
 }
