@@ -1,11 +1,11 @@
 package restorder.orderproduk.entity;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import restorder.orderproduk.entity.Enum.ERole;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity

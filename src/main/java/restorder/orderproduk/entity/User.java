@@ -1,8 +1,8 @@
 package restorder.orderproduk.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -1,6 +1,7 @@
 package restorder.orderproduk.entity;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "pegawais")

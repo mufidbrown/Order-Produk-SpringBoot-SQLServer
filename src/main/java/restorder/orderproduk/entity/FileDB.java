@@ -1,8 +1,12 @@
 package restorder.orderproduk.entity;
 
 
-import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "files")
@@ -18,7 +22,7 @@ public class FileDB {
 
     private String type;
 
-    @Lob
+//    @Lob
     private byte[] data;
 
     public FileDB() {
