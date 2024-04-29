@@ -20,6 +20,8 @@ Backend Services:
 14. Dynamic Column
 15. JSON Object with File Upload in Spring Rest API Example
 
+http://localhost:8088/swagger-ui/index.html#/
+
 
 
 
