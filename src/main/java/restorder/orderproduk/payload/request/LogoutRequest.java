@@ -1,4 +1,4 @@
-package restorder.orderproduk.payload;
+package restorder.orderproduk.payload.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

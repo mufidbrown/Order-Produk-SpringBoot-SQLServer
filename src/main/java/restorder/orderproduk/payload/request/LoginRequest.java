@@ -1,4 +1,4 @@
-package restorder.orderproduk.payload;
+package restorder.orderproduk.payload.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,12 @@ import javax.validation.constraints.NotBlank;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TokenRefreshRequest {
+public class LoginRequest {
 
     @NotBlank
-    private String refreshToken;
+    private String username;
+
+    @NotBlank
+    private String password;
 
 }
