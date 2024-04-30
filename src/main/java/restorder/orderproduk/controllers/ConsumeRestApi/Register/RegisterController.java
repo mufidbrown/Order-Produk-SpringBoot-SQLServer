@@ -1,12 +1,13 @@
 package restorder.orderproduk.controllers.ConsumeRestApi.Register;
 
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.ConsumeRestApi.RegisterRequest;
 import restorder.orderproduk.service.ConsumeRestApi.register.RegisterService;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/register")
