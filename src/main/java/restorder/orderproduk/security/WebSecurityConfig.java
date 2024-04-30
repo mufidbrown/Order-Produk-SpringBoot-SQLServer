@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import restorder.orderproduk.jwt.AuthEntryPointJwt;
+import restorder.orderproduk.jwt.AuthTokenFilter;
 import restorder.orderproduk.jwt.JwtUtils;
 
 
@@ -78,4 +79,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new AuthTokenFilter(jwtUtils, customUserDetailsService);
     }
 }
-}
+
