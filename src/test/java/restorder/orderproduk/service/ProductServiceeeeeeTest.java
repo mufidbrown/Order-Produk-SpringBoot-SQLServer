@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-import restorder.orderproduk.entity.Product;
-import restorder.orderproduk.repositories.ProductRepository;
 import restorder.orderproduk.service.product.ProductService;
 
 import java.util.Optional;

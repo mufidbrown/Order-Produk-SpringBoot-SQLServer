@@ -9,7 +9,7 @@
 //import org.springframework.boot.test.context.SpringBootTest;
 //import restorder.orderproduk.entity.User;
 //import restorder.orderproduk.repositories.UserRepository;
-//import restorder.orderproduk.service.user.UserService;
+//import restorder.orderproduk.service.user.UserServiceImpl;
 //
 //import java.util.ArrayList;
 //import java.util.List;
@@ -25,7 +25,7 @@
 //    private UserRepository userRepository;
 //
 //    @InjectMocks
-//    private UserService userService;
+//    private UserServiceImpl userService;
 //
 //    @BeforeEach
 //    public void init() {
