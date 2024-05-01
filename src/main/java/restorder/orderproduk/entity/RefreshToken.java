@@ -9,9 +9,9 @@ import java.time.Instant;
 @Entity
 @Table(name = "RefreshTokenService")
 @Data
-public class RefreshToken  implements Serializable {
+public class RefreshToken implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne

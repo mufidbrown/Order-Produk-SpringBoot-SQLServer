@@ -1,23 +1,23 @@
-package restorder.orderproduk.controllers;
-
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.entity.User;
-import restorder.orderproduk.service.user.UserServiceImpl;
-
-import java.util.List;
-
-@RestController
-@RequestMapping("/api/users")
-public class UserController {
-
-    @Autowired
-    private UserServiceImpl userService;
-
+//package restorder.orderproduk.controllers;
+//
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.web.bind.annotation.*;
+//import restorder.orderproduk.api.BaseResponse;
+//import restorder.orderproduk.entity.User;
+//import restorder.orderproduk.service.user.UserServiceImpl;
+//
+//import java.util.List;
+//
+//@RestController
+//@RequestMapping("/api/users")
+//public class UserController {
+//
+//    @Autowired
+//    private UserServiceImpl userService;
+//
 //    @GetMapping
 //    public ResponseEntity<List<User>> getAllUsers() {
 //        List<User> users = userService.getAllUsers();
@@ -55,20 +55,20 @@ public class UserController {
 //        userService.deleteUser(id);
 //        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 //    }
-
-
-
-
-    //-----------------------BaseResponse------------------------
-
+//
+//
+//
+//
+//    -----------------------BaseResponse------------------------
+//
 //    @GetMapping("/user/v1")
 //    public ResponseEntity<BaseResponse<List<User>>> getAllUsers2() {
 //        List<User> users = userService.getAllUsers();
 //        return ResponseEntity.ok(BaseResponse.ok("Daftar Semua User", users));
 //
 //    }
-
-
+//
+//
 //    @GetMapping("/user/v1/{id}")
 //    public ResponseEntity<BaseResponse<User>> getUserById2(@PathVariable("id") Long id) {
 //        User user = userService.getUserById(id);
@@ -78,4 +78,4 @@ public class UserController {
 //            return ResponseEntity.ok(BaseResponse.error("User Tidak Ditemukan"));
 //        }
 //    }
-}
+//

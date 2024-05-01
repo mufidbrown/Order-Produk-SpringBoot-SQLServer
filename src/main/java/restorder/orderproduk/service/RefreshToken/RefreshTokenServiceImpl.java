@@ -3,6 +3,8 @@ package restorder.orderproduk.service.RefreshToken;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import restorder.orderproduk.entity.RefreshToken;
 import restorder.orderproduk.entity.User;
 import restorder.orderproduk.repositories.RefreshTokenRepository;
@@ -12,6 +14,8 @@ import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
+@Transactional
 public class RefreshTokenServiceImpl implements RefreshTokenService{
 
     @Value("${jwt.secret.refrEshexpireMs}")
@@ -33,7 +37,7 @@ public class RefreshTokenServiceImpl implements RefreshTokenService{
     }
 
     @Override
-    public RefreshToken createRefreshToken(int userId) {
+    public RefreshToken createRefreshToken(long userId) {
 
         RefreshToken refreshToken = new RefreshToken();
         refreshToken.setUser(userServiceImpl.findById(userId));
@@ -54,7 +58,7 @@ public class RefreshTokenServiceImpl implements RefreshTokenService{
     }
 
     @Override
-    public int deleteByUserId(int userId) {
+    public long deleteByUserId(long userId) {
 
         User user = userServiceImpl.findById(userId);
         return refreshTokenRepository.deleteByUser(user);

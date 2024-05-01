@@ -1,6 +1,8 @@
 package restorder.orderproduk.exception.error;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import restorder.orderproduk.api.BaseResponse;
+import restorder.orderproduk.exception.FieldErrorModel;
 import restorder.orderproduk.exception.RefreshTokenException;
 import restorder.orderproduk.exception.RoleException;
 import restorder.orderproduk.exception.UserNotFoundException;
@@ -22,6 +26,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
+//@Qualifier("globalExceptionHandlerError")
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleHttpMediaTypeNotSupported : triggers when the JSON is invalid
@@ -138,5 +143,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 "Refresh Token Not Found", details);
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+    }
+
+
+
+    //ini dari magang
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Object> handleValidationException(MethodArgumentNotValidException ex) {
+        List<FieldErrorModel> errors = ex.getBindingResult().getFieldErrors()
+                .stream()
+                .map(x -> new FieldErrorModel(x.getField(), x.getDefaultMessage()))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(BaseResponse.error("Validation Error"));
     }
 }

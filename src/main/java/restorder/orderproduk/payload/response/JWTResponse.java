@@ -9,7 +9,7 @@ public class JWTResponse {
     private String token;
     private String type = "Bearer";
     private String refreshToken;
-    private int id;
+    private long id;
     private String username;
     private String email;
     private List<String> roles;
