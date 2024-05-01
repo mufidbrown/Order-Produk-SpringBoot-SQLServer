@@ -1,13 +1,12 @@
 package restorder.orderproduk.service.QueryNative;
 
-
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.ConsumeRestApi.PegawaiResponse;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.Arrays;
 import java.util.List;
 

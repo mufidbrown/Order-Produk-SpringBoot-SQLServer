@@ -5,8 +5,6 @@ import restorder.orderproduk.model.*;
 import restorder.orderproduk.model.ConsumeRestApi.*;
 import retrofit2.http.*;
 
-
-
 public interface ApiRetrofit {
 
     @GET("users/mojombo")

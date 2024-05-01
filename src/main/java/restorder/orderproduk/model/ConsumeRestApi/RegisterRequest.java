@@ -1,11 +1,11 @@
 package restorder.orderproduk.model.ConsumeRestApi;
 
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.validation.constraints.Size;
+import org.intellij.lang.annotations.RegExp;
 
 @Data
 @Builder

@@ -1,8 +1,7 @@
 package restorder.orderproduk.entity;
 
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 
 @Getter
