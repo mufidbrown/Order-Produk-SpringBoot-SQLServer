@@ -114,7 +114,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
 
-    // handleRoleException : triggers when there is not resource with the specified ID in RefreshToken
+    // handleRoleException : triggers when there is not resource with the specified ID in RefreshTokenService
     @ExceptionHandler(RoleException.class)
     public ResponseEntity<Object> handleRoleException(RoleException ex) {
 
@@ -127,7 +127,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
 
-    // handleRefreshTokenException : triggers when there is not resource with the specified ID in RefreshToken
+    // handleRefreshTokenException : triggers when there is not resource with the specified ID in RefreshTokenService
     @ExceptionHandler(RefreshTokenException.class)
     public ResponseEntity<Object> handleRefreshTokenException(RefreshTokenException ex) {
 
