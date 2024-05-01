@@ -22,7 +22,7 @@ public class HttpUser {
 
     private final String baseUrl = "https://reqres.in/";
 
-    @Bean("USER_HTTP_CLIENT")
+    @Bean("USER_HTTP_CLIENT")   
     Retrofit provideRetrofit(ObjectMapper mapper) {
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(log::info);
