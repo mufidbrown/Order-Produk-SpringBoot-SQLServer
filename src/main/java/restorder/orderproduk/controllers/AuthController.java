@@ -96,7 +96,7 @@ public class AuthController {
 
         return ResponseEntity.badRequest().body(new MessageResponse("Role: " + roleName + "saved "));
     }
-    
+
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignupRequest signUpRequest) {
 

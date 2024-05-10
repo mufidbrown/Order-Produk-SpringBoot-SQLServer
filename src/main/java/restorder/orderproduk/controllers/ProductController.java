@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.entity.Product;
-import restorder.orderproduk.service.product.ProductService;
+import restorder.orderproduk.service.product.ProductServiceImpl;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductService productService;
+    private ProductServiceImpl productService;
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {

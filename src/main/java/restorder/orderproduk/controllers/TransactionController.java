@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.exception.ResourceNotFoundException;
 import restorder.orderproduk.model.TransactionRequest;
-import restorder.orderproduk.service.transaction.TransactionService;
+import restorder.orderproduk.service.transaction.TransactionServiceImpl;
 
 import java.util.List;
 
@@ -16,7 +16,13 @@ import java.util.List;
 public class TransactionController {
 
     @Autowired
-    private TransactionService transactionService;
+    private TransactionServiceImpl transactionService;
+
+    @PostMapping
+    public Transaction createTransaction(@RequestBody TransactionRequest transactionRequest) {
+        return transactionService.createTransaction(transactionRequest);
+    }
+
 
     @GetMapping
     public ResponseEntity<List<Transaction>> getAllTransactions() {
@@ -24,36 +30,15 @@ public class TransactionController {
         return new ResponseEntity<>(transactions, HttpStatus.OK);
     }
 
-//    @GetMapping
-//    public List<Transaction> getAllTransactions() {
-//        return transactionService.getAllTransactions();
-//    }
-
-//    @GetMapping("/{id}")
-//    public List<Transaction> getIdTransactions(@PathVariable Long id) {
-//        Transaction transaction = transactionService.findById(id);
-//        if (transaction == null) {
-//            throw new ResourceNotFoundException("Example not found with ID: " + id);
-//        }
-//        return transactionService.getAllTransactions();
-////        return ResponseEntity.ok(example);
-////        return transaction.ok()findById(id).orElse(null);
-//
-//    }
-        @GetMapping("/{id}")
-        public ResponseEntity<Transaction> getTransactionById(@PathVariable Long id) {
-            Transaction transaction = transactionService.findById(id);
-            if (transaction == null) {
-                throw new ResourceNotFoundException("Transaksi tidak ditemukan dengan id: " + id);
-            }
-            return ResponseEntity.ok(transaction);
+    @GetMapping("/{id}")
+    public ResponseEntity<Transaction> getTransactionById(@PathVariable Long id) {
+        Transaction transaction = transactionService.findById(id);
+        if (transaction == null) {
+            throw new ResourceNotFoundException("Transaksi tidak ditemukan dengan id: " + id);
         }
-
-
-    @PostMapping
-    public Transaction createTransaction(@RequestBody TransactionRequest transactionRequest) {
-        return transactionService.createTransaction(transactionRequest);
+        return ResponseEntity.ok(transaction);
     }
+
 
 
 
