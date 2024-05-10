@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.exception.ResourceNotFoundException;
-import restorder.orderproduk.model.TransactionRequest;
+import restorder.orderproduk.model.request.TransactionRequest;
 import restorder.orderproduk.service.transaction.TransactionServiceImpl;
 
 import java.util.List;

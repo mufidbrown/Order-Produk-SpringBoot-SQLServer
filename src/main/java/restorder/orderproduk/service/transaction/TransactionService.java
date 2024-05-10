@@ -1,7 +1,7 @@
 package restorder.orderproduk.service.transaction;
 
 import restorder.orderproduk.entity.Transaction;
-import restorder.orderproduk.model.TransactionRequest;
+import restorder.orderproduk.model.request.TransactionRequest;
 
 import java.util.List;
 

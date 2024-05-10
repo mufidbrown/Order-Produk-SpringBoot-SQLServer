@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.entity.User;
-import restorder.orderproduk.model.TransactionRequest;
+import restorder.orderproduk.model.request.TransactionRequest;
 import restorder.orderproduk.repositories.ProductRepository;
 import restorder.orderproduk.repositories.TransactionRepository;
 import restorder.orderproduk.repositories.UserRepository;

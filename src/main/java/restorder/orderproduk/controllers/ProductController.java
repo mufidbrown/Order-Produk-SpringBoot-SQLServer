@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import restorder.orderproduk.config.BaseResponse;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.service.product.ProductServiceImpl;
 
@@ -59,13 +60,13 @@ public class ProductController {
 
 
     //-----------------------BaseResponse------------------------
-//
-//    @GetMapping("/product/v1")
-//    public ResponseEntity<BaseResponse<List<Product>>> getAllProducts2() {
-//        List<Product> products = productService.getAllProducts();
-//        return ResponseEntity.ok(BaseResponse.ok("Daftar Semua Produk", products));
-//
-//    }
+
+    @GetMapping("/product/v1")
+    public ResponseEntity<BaseResponse<List<Product>>> getAllProducts2() {
+        List<Product> products = productService.getAllProducts();
+        return ResponseEntity.ok(BaseResponse.ok("Daftar Semua Produk", products));
+
+    }
 //
 //
 //    @GetMapping("/product/v1/{id}")
