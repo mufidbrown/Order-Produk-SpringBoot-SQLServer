@@ -16,22 +16,4 @@ public interface UserService {
     User findById(long userId);
 
 
-
-/*
-    ini untuk Upload Excel to DB
-*/
-    void saveUsersToDatabase(MultipartFile file);
-
-    List<User> getUsers();
-
-
-
-/*
-    ini untuk Download Excel from DB
-*/
-
-    boolean isValidExcelFile(MultipartFile file);
-
-    List<User> getUsersDataFromExcel(InputStream inputStream);
-
 }
