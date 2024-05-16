@@ -1,8 +1,10 @@
 package restorder.orderproduk.service.product;
 
+import org.springframework.web.multipart.MultipartFile;
 import restorder.orderproduk.config.BaseResponse;
 import restorder.orderproduk.entity.Product;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface ProductService {
@@ -14,9 +16,9 @@ public interface ProductService {
     Product createProduct(Product product);
 
 
-/*
+    /*
     Dibawah ini untuk QueryNative!
-*/
+  */
     BaseResponse<?> testproduct();
 
     BaseResponse<?> testParameterProduct(Integer idProduct);

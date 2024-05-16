@@ -50,10 +50,9 @@ public class ProductServiceImpl implements ProductService{
         return product;
     }
 
-
     /*
-        Dibawah ini untuk QueryNative!
-    */
+    Dibawah ini untuk QueryNative!
+*/
 
     @Override
     public BaseResponse<?> testproduct() {
