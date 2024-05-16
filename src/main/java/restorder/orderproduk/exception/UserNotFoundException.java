@@ -1,9 +1,14 @@
 package restorder.orderproduk.exception;
 
-public class UserNotFoundException extends Exception {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-    public UserNotFoundException(String message) {
-        super(message);
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class UserNotFoundException extends RuntimeException {
+
+    public UserNotFoundException(String msg) {
+        super(msg);
     }
+
 }
 

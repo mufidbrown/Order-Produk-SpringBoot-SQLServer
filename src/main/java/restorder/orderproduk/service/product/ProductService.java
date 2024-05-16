@@ -1,43 +1,26 @@
 package restorder.orderproduk.service.product;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import restorder.orderproduk.config.BaseResponse;
 import restorder.orderproduk.entity.Product;
-import restorder.orderproduk.repositories.ProductRepository;
 
+import java.io.IOException;
 import java.util.List;
 
-@Service
-public class ProductService {
+public interface ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
-    }
-
-    public Product getProductById(Long id) {
-        return productRepository.findById(id).orElse(null);
-    }
-
-    //update 08/12/2023
-    public Product updateProduct(Long id, Product product) {
-        Product productEntity= productRepository.findById(id).orElse(new Product());
-        productEntity.setPrice(product.getPrice());
-        productEntity.setName(product.getName());
-        productRepository.save(productEntity);
-        return productEntity;
-    }
-    //end update 08/12
+    List<Product> getAllProducts();
+    Product getProductById(Long id);
+    Product updateProduct(Long id, Product product);
+    void deleteProduct(Long id);
+    Product createProduct(Product product);
 
 
-    public void deleteProduct(Long id) {
-        productRepository.deleteById(id);
-    }
+    /*
+    Dibawah ini untuk QueryNative!
+  */
+    BaseResponse<?> testproduct();
 
-    public Product createProduct(Product product) {
-        productRepository.save(product);
-        return product;
-    }
+    BaseResponse<?> testParameterProduct(Integer idProduct);
 
 }
