@@ -51,7 +51,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     /*
-    Dibawah ini untuk QueryNative!
+    Dibawah ini untuk QueryNative PL/SQL!
 */
 
     @Override
