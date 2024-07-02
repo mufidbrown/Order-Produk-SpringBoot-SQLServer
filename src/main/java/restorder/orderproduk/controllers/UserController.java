@@ -5,19 +5,34 @@
 //import org.springframework.http.HttpStatus;
 //import org.springframework.http.ResponseEntity;
 //import org.springframework.web.bind.annotation.*;
-//import restorder.orderproduk.api.BaseResponse;
+//import org.springframework.web.multipart.MultipartFile;
+////import restorder.orderproduk.api.BaseResponse;
 //import restorder.orderproduk.entity.User;
+//import restorder.orderproduk.service.user.UserService;
 //import restorder.orderproduk.service.user.UserServiceImpl;
 //
 //import java.util.List;
+//import java.util.Map;
 //
 //@RestController
 //@RequestMapping("/api/users")
 //public class UserController {
-//
 //    @Autowired
 //    private UserServiceImpl userService;
 //
+//
+//    @PostMapping("/upload-users-data")
+//    public ResponseEntity<?> uploadCustomersData(@RequestParam("file") MultipartFile file){
+//        this.userService.saveUsersToDatabase(file);
+//        return ResponseEntity
+//                .ok(Map.of("Message", "Customers data uploaded and save to database successfully"));
+//    }
+//
+//    @GetMapping
+//    public ResponseEntity<List<User>> getUsers(){
+//        return new ResponseEntity<>(userService.getUsers(), HttpStatus.FOUND);
+//    }
+
 //    @GetMapping
 //    public ResponseEntity<List<User>> getAllUsers() {
 //        List<User> users = userService.getAllUsers();
@@ -55,12 +70,12 @@
 //        userService.deleteUser(id);
 //        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 //    }
-//
-//
-//
+
+
+
 //
 //    -----------------------BaseResponse------------------------
-//
+
 //    @GetMapping("/user/v1")
 //    public ResponseEntity<BaseResponse<List<User>>> getAllUsers2() {
 //        List<User> users = userService.getAllUsers();
@@ -78,4 +93,5 @@
 //            return ResponseEntity.ok(BaseResponse.error("User Tidak Ditemukan"));
 //        }
 //    }
-//
+//}
+
