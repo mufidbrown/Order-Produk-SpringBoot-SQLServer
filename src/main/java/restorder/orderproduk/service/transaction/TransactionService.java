@@ -1,5 +1,6 @@
 package restorder.orderproduk.service.transaction;
 
+import restorder.orderproduk.config.BaseResponse;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.model.request.TransactionRequest;
 
@@ -11,4 +12,7 @@ public interface TransactionService {
     Transaction findById(Long id);
     Transaction createTransaction(TransactionRequest transactionRequest);
 
+    BaseResponse<?> test();
+
+    BaseResponse<?> testParameter(Integer idPegawai);
 }
