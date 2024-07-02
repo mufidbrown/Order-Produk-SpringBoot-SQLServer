@@ -58,6 +58,11 @@ public class TransactionServiceImpl implements TransactionService{
         return transactionRepository.save(transaction);
     }
 
+      /*
+    Dibawah ini untuk QueryNative PL/SQL!
+*/
+
+
     @Override
     public BaseResponse<?> test() {
         Query query = entityManager.createNativeQuery("SELECT nik, nama, alamat, email, jabatan, telepon  from pegawais p WHERE id_pegawai = 11");
