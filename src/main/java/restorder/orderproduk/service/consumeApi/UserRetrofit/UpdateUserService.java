@@ -1,7 +1,7 @@
-package restorder.orderproduk.service.ConsumeRestApi.UserRetrofit;
+package restorder.orderproduk.service.consumeApi.UserRetrofit;
 
-import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.model.ConsumeRestApi.UpdateUserRequest;
+import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.model.consumeApi.UpdateUserRequest;
 
 public interface UpdateUserService {
 

@@ -1,6 +1,6 @@
-package restorder.orderproduk.service.ConsumeRestApi.UserRetrofit;
+package restorder.orderproduk.service.consumeApi.UserRetrofit;
 
-import restorder.orderproduk.api.BaseResponse;
+import restorder.orderproduk.config.BaseResponse;
 
 public interface UserService {
 

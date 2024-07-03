@@ -1,9 +1,10 @@
-package restorder.orderproduk.service.ConsumeRestApi.cat;
+package restorder.orderproduk.service.consumeApi.cat;
 
-import restorder.orderproduk.api.BaseResponse;
+
+import restorder.orderproduk.config.BaseResponse;
 
 public interface CatsService {
 
-    BaseResponse<?>cats();
+    BaseResponse<?> cats();
 
 }

@@ -1,10 +1,10 @@
-package restorder.orderproduk.service.ConsumeRestApi.retrofit;
+package restorder.orderproduk.service.consumeApi.retrofit;
 
-import restorder.orderproduk.api.BaseResponse;
+import restorder.orderproduk.config.BaseResponse;
 
 public interface RetrofitService {
 
-    BaseResponse<?>github();
+    BaseResponse<?> github();
 
 
 }

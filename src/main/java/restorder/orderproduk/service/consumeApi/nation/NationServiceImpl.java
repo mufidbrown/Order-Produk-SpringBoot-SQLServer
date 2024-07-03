@@ -1,10 +1,10 @@
-package restorder.orderproduk.service.ConsumeRestApi.nation;
+package restorder.orderproduk.service.consumeApi.nation;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import restorder.orderproduk.api.ApiRetrofit;
-import restorder.orderproduk.api.BaseResponse;
-import restorder.orderproduk.model.ConsumeRestApi.NationResponse;
+import restorder.orderproduk.config.ApiRetrofit;
+import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.model.consumeApi.NationResponse;
 import retrofit2.Retrofit;
 
 import java.util.concurrent.atomic.AtomicReference;
