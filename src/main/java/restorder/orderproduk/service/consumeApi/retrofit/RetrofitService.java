@@ -1,6 +1,6 @@
 package restorder.orderproduk.service.consumeApi.retrofit;
 
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 
 public interface RetrofitService {
 

@@ -1,4 +1,4 @@
-package restorder.orderproduk.config;
+package restorder.orderproduk.api;
 
 import io.reactivex.Single;
 import restorder.orderproduk.model.consumeApi.*;

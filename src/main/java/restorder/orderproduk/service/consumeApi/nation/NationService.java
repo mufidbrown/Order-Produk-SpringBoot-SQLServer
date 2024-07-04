@@ -1,7 +1,7 @@
 package restorder.orderproduk.service.consumeApi.nation;
 
 
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 
 public interface NationService {
 

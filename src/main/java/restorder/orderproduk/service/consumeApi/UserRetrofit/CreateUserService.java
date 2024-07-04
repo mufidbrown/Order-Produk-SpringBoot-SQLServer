@@ -1,6 +1,6 @@
 package restorder.orderproduk.service.consumeApi.UserRetrofit;
 
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.consumeApi.CreateUserRequest;
 
 public interface CreateUserService {

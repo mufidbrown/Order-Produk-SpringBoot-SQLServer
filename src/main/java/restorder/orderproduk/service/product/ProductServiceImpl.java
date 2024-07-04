@@ -3,7 +3,7 @@ package restorder.orderproduk.service.product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.model.response.ProductResponse;
 import restorder.orderproduk.repositories.ProductRepository;

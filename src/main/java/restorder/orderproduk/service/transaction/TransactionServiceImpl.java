@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Service;
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.entity.Product;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.entity.User;

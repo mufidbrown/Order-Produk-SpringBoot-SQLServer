@@ -3,7 +3,7 @@ package restorder.orderproduk.controllers.consumeApi.Register;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.model.consumeApi.RegisterRequest;
 import restorder.orderproduk.service.consumeApi.register.RegisterService;
 

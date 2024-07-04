@@ -1,4 +1,4 @@
-package restorder.orderproduk.config;
+package restorder.orderproduk.api;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
