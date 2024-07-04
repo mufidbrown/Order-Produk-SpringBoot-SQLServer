@@ -1,6 +1,6 @@
 package restorder.orderproduk.service.transaction;
 
-import restorder.orderproduk.config.BaseResponse;
+import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.entity.Transaction;
 import restorder.orderproduk.model.request.TransactionRequest;
 
