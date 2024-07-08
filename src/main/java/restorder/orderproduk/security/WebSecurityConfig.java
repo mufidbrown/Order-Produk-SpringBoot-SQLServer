@@ -1,5 +1,6 @@
 package restorder.orderproduk.security;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import restorder.orderproduk.jwt.AuthEntryPointJwt;
 import restorder.orderproduk.jwt.AuthTokenFilter;
@@ -50,6 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and()
@@ -66,7 +69,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.addFilterBefore(authenticationJwtTokenFilter(jwtUtils,customUserDetailsService), UsernamePasswordAuthenticationFilter.class);
     }
-    ///iki code asli
+//iki code asli
+
+
 
     @Bean
     @Override
@@ -79,4 +84,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new AuthTokenFilter(jwtUtils, customUserDetailsService);
     }
 }
+
+
 
