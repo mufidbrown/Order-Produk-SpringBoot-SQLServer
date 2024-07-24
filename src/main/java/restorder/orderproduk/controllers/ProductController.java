@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restorder.orderproduk.api.BaseResponse;
 import restorder.orderproduk.entity.Product;
-import restorder.orderproduk.service.product.ProductService;
+import restorder.orderproduk.service.product.ProductServiceImpl;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductService productService;
+    private ProductServiceImpl productService;
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
@@ -67,17 +67,17 @@ public class ProductController {
         return ResponseEntity.ok(BaseResponse.ok("Daftar Semua Produk", products));
 
     }
-
-
-    @GetMapping("/product/v1/{id}")
-    public ResponseEntity<BaseResponse<Product>> getProductById2(@PathVariable("id") Long id) {
-        Product product = productService.getProductById(id);
-        if (product != null) {
-            return ResponseEntity.ok(BaseResponse.ok("Product Ditemukan", product));
-        } else {
-            return ResponseEntity.ok(BaseResponse.error("Product Tidak Ditemukan"));
-        }
-    }
+//
+//
+//    @GetMapping("/product/v1/{id}")
+//    public ResponseEntity<BaseResponse<Product>> getProductById2(@PathVariable("id") Long id) {
+//        Product product = productService.getProductById(id);
+//        if (product != null) {
+//            return ResponseEntity.ok(BaseResponse.ok("Product Ditemukan", product));
+//        } else {
+//            return ResponseEntity.ok(BaseResponse.error("Product Tidak Ditemukan"));
+//        }
+//    }
 
 
 

@@ -1,8 +1,7 @@
 package restorder.orderproduk.api;
 
 import io.reactivex.Single;
-import restorder.orderproduk.model.*;
-import restorder.orderproduk.model.ConsumeRestApi.*;
+import restorder.orderproduk.model.consumeApi.*;
 import retrofit2.http.*;
 
 public interface ApiRetrofit {
