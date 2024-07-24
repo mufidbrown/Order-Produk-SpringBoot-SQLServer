@@ -143,6 +143,13 @@
 			<version>1.11.0</version>
 		</dependency>
 
+		<!-- Springfox Swagger 3 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
 
 
 		<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.opencsv/opencsv &ndash;&gt;-->
