@@ -84,7 +84,7 @@
 			<version>${jwt.version}</version>
 		</dependency>
 
-	s
+
 
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
