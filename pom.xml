@@ -142,7 +142,11 @@
 			<artifactId>commons-csv</artifactId>
 			<version>1.11.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
 
 
 		<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.opencsv/opencsv &ndash;&gt;-->
